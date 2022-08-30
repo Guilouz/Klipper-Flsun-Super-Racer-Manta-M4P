@@ -19,7 +19,7 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 - Drivers TMC 2209/2226
 - LED Neopixel (en option, voir fichier printer.cfg)
 - Ecran BigTreeTech PITFT70 V2.0
-
+<br />
 Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
 
 [ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
