@@ -92,7 +92,7 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 ## Connexion via SSH
 
-- Téléchargez le logiciel MobaXterm ici : https://mobaxterm.mobatek.net/download-home-edition.html
+- Téléchargez et installez le logiciel MobaXterm ici : https://mobaxterm.mobatek.net/download-home-edition.html
 
 - Lancez-le puis cliquez sur l'icône `Session` puis `SSH` : 
 
