@@ -259,4 +259,99 @@ sudo reboot
 
 ## Installation du firmware Klipper sur la Manta M4P
 
+- Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
+```
+ls /dev/serial/by-id/
+```
+- Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile plus tard.
 
+- Saisissez ensuite les commandes suivantes :
+```
+cd ~/klipper/
+```
+puis
+```
+make menuconfig
+```
+- Sélectionnez ces paramètres :
+```
+* [*] Enable extra low-level configuration options
+* Micro-controller Architecture (STMicroelectronics STM32) --->
+* Processor model (STM32G0B1) --->
+* Bootloader offset (8KiB bootloader) --->
+* Clock Reference (8 MHz crystal) --->
+* Communication interface (USB (on PA11/PA12)) --->
+```
+- Puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
+
+- Saisissez la commande suivante pour compiler le firmware :
+```
+make
+```
+- Une fois la compilation terminée, vous avez alors deux possibilités :
+
+  - Installation manuelle du firmware :
+    - Récupérez le firmware nommé `Klipper.bin` sur la page de gauche dans le répertoire `/home/pi/klipper/out/`.
+    - Renommez-le en `firmware.bin`.
+    - Copiez-le à la racine d'une carte SD (et non microSD) formatée en FAT32 et une taille d'allocation de 4096.
+    - Insérez la carte SD dans la Manta M4P puis allumez l'imprimante.
+    - L'installation dure que quelques secondes, pour vérifier que le firmware a bien été installé, le fichier sur la carte SD doit avoir été renommé en `FIRMWARE.CUR`.
+
+  - Installation directe du firmware :
+    - Saisissez la commande suivante :
+    ```
+    make flash FLASH_DEVICE=/dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
+    ```
+    - Cela doit ressembler à ça :
+    ```
+    make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_2F0034001050415833323520-if00
+    ```
+    - Il y aura un message d'erreur `dfu-util: Error during download get_status` après la mise à jour. N'y prêtez pas attention, le plus important c'est d'obtenir la ligne `File downloaded successfully`.
+
+- Vous pouvez ensuite accéder à l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi ou l'URL  `http://mainsail.local`.
+
+- Rendez-vous dans l'onglet `Machine` puis importez les fichiers `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg`.
+
+- Une fois importés, ouvrez le fichier `printer.cfg` et modifiez la ligne suivante dans la section `Paramètres MCU` :
+```
+serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
+```
+- Après sauvegarde et redémarrage du firmware, vous devriez voir la Manta M4P se connecter à Klipper.
+
+<br />
+
+## Configuration pour l'ADXL345
+
+- Connectez-vous de nouveau en SSH puis saisissez les commandes suivantes (une à la fois) :
+```
+cd ~/klipper/
+sudo cp "./scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
+sudo update-rc.d klipper_mcu defaults
+```
+- Il faut ensuite compiler le code du microcontrôleur en saisissant ces commandes (une à la fois) :
+```
+cd ~/klipper/
+make menuconfig
+```
+- Sur le menu, définissez `Microcontroller Architecture` sur `Linux process`, puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
+
+- Pour compiler et installer le microcontrôleur, saisissez les commandes suivantes (une à la fois) :
+```
+sudo service klipper stop
+make flash
+sudo service klipper start
+```
+- Il faut ensuite installer les dépendances nécessaires en saisissant ces commandes (une à la fois) :
+```
+sudo apt update
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
+```
+- Suivi de cette commande pour installer Numpy dans l'environnement de Klipper :
+```
+~/klippy-env/bin/pip install -v numpy
+```
+- Il suffit ensuite dé-commenter (retirer le #) la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
+```
+#[include adxl345.cfg]
+```
+- Après une redémarrage du firmware vus devriez voir le MCU de l'ADXL se cnnecter.
