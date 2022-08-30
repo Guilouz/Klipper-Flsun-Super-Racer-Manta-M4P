@@ -25,6 +25,12 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 <br />
 
+## Fichiers STL nécessaires
+
+
+
+<br />
+
 ## Installation de Klipper via MainsailOS
 
 - Téléchargez et installez la dernière version de Raspberry Pi Imager ici : https://www.raspberrypi.com/software/
