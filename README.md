@@ -28,9 +28,9 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 ## Fichiers STL nécessaires
 
+- Support pour BigTreeTech Manta M4P :
 - Case pour écran BigTreeTech PITFT70 + Support : 
 - Support ADXL : https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer
-- Support pour BigTreeTech Manta M4P :
 
 <br />
 
