@@ -145,7 +145,7 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Vous pouvez ensuite quitter Kiauh en saisissant `B` puis `Q`.
 
-- Vous pourez également installer par la suite la version de KlipperScreen optimisée pour la Super Racer, voir [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
+- Vous pourez également installer par la suite la version de KlipperScreen optimisée pour la Super Racer, voir [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer).
 
 <br />
 
