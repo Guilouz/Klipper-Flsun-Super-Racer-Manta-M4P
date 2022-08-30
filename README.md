@@ -6,6 +6,7 @@ Klipper est un firmware d'imprimante 3D. Il combine la puissance d'un ordinateur
 
 Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Features.html) pour plus d'informations sur les raisons pour lesquelles vous devriez utiliser Klipper.
 
+<br />
 
 ## Informations
 
@@ -22,6 +23,7 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 [ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
 
+<br />
 
 ## Installation de Klipper via MainsailOS
 
@@ -89,6 +91,7 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 - L'installation est maintenant terminée.
 
+<br />
 
 ## Connexion via SSH
 
@@ -114,5 +117,64 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 ![Capture d’écran 2022-08-31 à 00 37 25](https://user-images.githubusercontent.com/12702322/187555942-ff82a7b1-a43e-4c75-9fd8-7a1ccd43fd58.jpg)
 
+<br />
 
 ## Installation de Kiauh et de KlipperScreen
+
+- Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante pour installer Kiauh :
+```
+git clone https://github.com/th33xitus/kiauh.git
+```
+- Puis saisissez la commande suivante pour lancer Kiauh :
+```
+./kiauh/kiauh.sh
+```
+- Saisissez `1` pour sélectionner `Installation` puis `5` pour installer KlipperScreen.
+
+- Une fois l'installation terminée, vous pouvez également mettre le système à jour en saisissant `2` pour sélectionner `Update`.
+
+- Vous pouvez ensuite quitter Kiauh en saisissant `B` puis `Q`.
+
+<br />
+
+## Désactivation du PCI Express sur le CM4
+
+La Manta M4P ne dispose pas de port PCI Express, il est donc nécessaire de désactiver la fonctionnalité pour éviter un message au démarrage.
+
+- Créez le fichier `disable-pcie-overlay.dts` avec la commande suivante : 
+```
+sudo nano /boot/overlays/disable-pcie-overlay.dts
+```
+- Copier ce code dans la fenêtre qui s'affiche :
+```
+/*
+ * disable-pcie-overlay.dts
+ */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@0 {
+		target = <&pcie0>;
+		__overlay__  {
+			status = "disabled";
+		};
+	};
+};
+```
+- Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
+
+- Il faut ensuite convertir le fichier `disable-pcie-overlay.dts` en `disable-pcie-overlay.dtbo` avec la commande suivante :
+```
+sudo dtc -@ -I dts -O dtb -o /boot/overlays/disable-pcie-overlay.dtbo /boot/overlays/disable-pcie-overlay.dts
+```
+- Puis supprimer le fichier `disable-pcie-overlay.dts` avec la commande suivante :
+```
+sudo rm /boot/overlays/disable-pcie-overlay.dts
+```
+<br />
+
+## Installation de l'image de démarrage
