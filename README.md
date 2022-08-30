@@ -175,6 +175,88 @@ sudo dtc -@ -I dts -O dtb -o /boot/overlays/disable-pcie-overlay.dtbo /boot/over
 ```
 sudo rm /boot/overlays/disable-pcie-overlay.dts
 ```
+
 <br />
 
 ## Installation de l'image de démarrage
+
+- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/9457081/Boot.Pack.zip)
+
+- Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
+
+- Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante :
+```
+sudo cp /home/pi/splash.png /boot/
+```
+- Puis celle-ci :
+```
+sudo cp /home/pi/splash.txt /boot/
+```
+- Et encore celle-là :
+```
+sudo cp /home/pi/initramfs.img /boot/
+```
+- Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en faisant un clic-droit sur chacun d'eux puis `Delete`.
+
+<br />
+
+## Installation du driver pour écran DSI & Caméra CSI
+
+- Saisissez la commande suivante : 
+```
+sudo wget https://datasheets.raspberrypi.com/cmio/dt-blob-disp1-cam1.bin -O /boot/dt-blob.bin
+```
+
+<br />
+
+## Modification du fichier /boot/cmdline.txt
+
+- Saisissez la commande suivante : 
+```
+sudo nano /boot/cmdline.txt
+```
+- Sur la fenêtre qui s'affiche, ajoutez ces éléments à la fin de la ligne :
+```
+logo.nologo loglevel=0 vt.global_cursor_default=0 splash silent quiet
+```
+- Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
+
+<br />
+
+## Modification du fichier /boot/config.txt
+
+- Saisissez la commande suivante : 
+```
+sudo nano /boot/config.txt
+```
+- Sur la fenêtre qui s'affiche, ajoutez ces éléments :
+```
+## Splashcreen settings
+initramfs initramfs.img
+dtoverlay=disable-pcie-overlay
+disable_splash=1
+boot_delay=0
+
+[cm4]
+## Enable USB serial
+dtoverlay=dwc2,dr_mode=host
+```
+- Et modifiez également ces lignes déjà présentes :
+  - Retirez le "#" devant : disable_overscan=1
+  - Ajoutez un "#" devant : #dtoverlay=vc4-fkms-v3d
+```
+disable_overscan=1
+#dtoverlay=vc4-fkms-v3d
+```
+- Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
+
+- Vous pouvez maintenant saisir la commande suivante pour redémarrer le Raspberry Pi :
+```
+sudo reboot
+```
+
+<br />
+
+## Installation du firmware Klipper sur la Manta M4P
+
+
