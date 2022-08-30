@@ -347,7 +347,7 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 ~/klippy-env/bin/pip install -v numpy
 ```
-- Il suffit ensuite dé-commenter (retirer le #) la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
+- Il suffit ensuite dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
 ```
 #[include adxl345.cfg]
 ```
