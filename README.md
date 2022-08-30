@@ -18,6 +18,7 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 - Bloc de chauffe Trianglelab CHC Pro (104NT-4-R025H42G) (en option, voir fichier printer.cfg)
 - Drivers TMC 2209/2226
 - LED Neopixel (en option, voir fichier printer.cfg)
+- Ecran BigTreeTech PITFT70 V2.0
 
 Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
 
@@ -27,7 +28,9 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 
 ## Fichiers STL nécessaires
 
-
+- Case pour écran BigTreeTech PITFT70 + Support : 
+- Support ADXL : https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer
+- Support pour BigTreeTech Manta M4P :
 
 <br />
 
