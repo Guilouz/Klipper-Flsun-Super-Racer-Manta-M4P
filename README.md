@@ -15,9 +15,9 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 - Carte mère BigTreeTech Manta M4P
 - Raspberry Pi Compute Module 4
 - Extrudeur Bondtech LGX Lite
-- Bloc de chauffe Trianglelab CHC Pro (104NT-4-R025H42G) (en option)
+- Bloc de chauffe Trianglelab CHC Pro (104NT-4-R025H42G) (en option, voir fichier printer.cfg)
 - Drivers TMC 2209/2226
-- LED Neopixel (en option)
+- LED Neopixel (en option, voir fichier printer.cfg)
 
 Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
 
