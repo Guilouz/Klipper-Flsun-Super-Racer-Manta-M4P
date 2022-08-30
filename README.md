@@ -265,12 +265,9 @@ ls /dev/serial/by-id/
 ```
 - Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile plus tard.
 
-- Saisissez ensuite les commandes suivantes :
+- Saisissez ensuite ces commandes (une à la fois) :
 ```
 cd ~/klipper/
-```
-puis
-```
 make menuconfig
 ```
 - Sélectionnez ces paramètres :
