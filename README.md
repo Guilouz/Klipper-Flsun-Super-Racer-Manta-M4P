@@ -145,6 +145,8 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Vous pouvez ensuite quitter Kiauh en saisissant `B` puis `Q`.
 
+- Vous pourez également installer par la suite la version de KlipperScreen optimisé pour la Super Racer, voir [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
+
 <br />
 
 ## Désactivation du PCI Express sur le CM4
