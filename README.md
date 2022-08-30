@@ -83,7 +83,7 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 ![rpi-writing](https://user-images.githubusercontent.com/12702322/187553852-fae8bc38-a616-430f-a09d-303bf053a891.png)
 
-- Une fois terminé, cliquez sur Continuer :
+- Une fois terminé, cliquez sur `CONTINUE` :
 
 ![rpi-finished](https://user-images.githubusercontent.com/12702322/187553911-d12384ae-1c1c-4529-9115-da5d283d85cc.png)
 
@@ -94,5 +94,25 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 - Téléchargez le logiciel MobaXterm ici : https://mobaxterm.mobatek.net/download-home-edition.html
 
-- Lancez-le puis cliquez sur "Session" puis "SSH" : 
+- Lancez-le puis cliquez sur l'icône `Session` puis `SSH` : 
 
+![Capture d’écran 2022-08-31 à 00 27 15](https://user-images.githubusercontent.com/12702322/187554613-7c3b7776-2e9e-41cd-a331-9bcb29324e07.jpg)
+
+![Capture d’écran 2022-08-31 à 00 28 03](https://user-images.githubusercontent.com/12702322/187554724-47adc66d-b76a-4351-8d81-c077c41072c2.jpg)
+
+- Renseignez l'adresse IP de votre Raspberry Pi dans le champ `Remote Host`, cochez la case `Specify username` et saisissez le nom d'utilisateur `pi` dans le champ puis cliquez sur `OK` :
+
+![Capture d’écran 2022-08-31 à 00 31 14](https://user-images.githubusercontent.com/12702322/187555264-3c1497d8-b329-46e5-8df4-bd8609678e5c.jpg)
+
+- Sur la fenêtre qui s'affiche, saisissez votre mot de passe précédemment défini dans Raspberry Pi Imager (il ne s'affiche pas à la saisie, c'est normal) : 
+
+![Capture d’écran 2022-08-31 à 00 34 09](https://user-images.githubusercontent.com/12702322/187555380-327b9ae3-29c5-4d81-a595-d754525cc044.jpg)
+
+- Une fenêtre d'autorisation va s'afficher, autorisez-la. Il est également possible qu'une autre fenêtre vous demandant de changer le mot de passe s'affiche, ignorez-là.
+
+- Une fois connecté, sur la partie gauche de la fenêtre vous avez l'accès aux dossiers et fichiers de votre Raspberry Pi et sur la partie droite à la fenêtre d'invite de commande SSH :
+
+![Capture d’écran 2022-08-31 à 00 37 25](https://user-images.githubusercontent.com/12702322/187555942-ff82a7b1-a43e-4c75-9fd8-7a1ccd43fd58.jpg)
+
+
+## Installation de Kiauh et de KlipperScreen
