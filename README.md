@@ -316,7 +316,7 @@ make
 ```
 serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
 ```
-- Après sauvegarde et redémarrage du firmware, vous devriez voir la Manta M4P se connecter à Klipper.
+- Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
 
 <br />
 
@@ -354,4 +354,4 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 #[include adxl345.cfg]
 ```
-- Après une redémarrage du firmware vus devriez voir le MCU de l'ADXL se cnnecter.
+- Après une redémarrage du firmware vus devriez voir le MCU de l'ADXL se cnnecter à Klipper.
