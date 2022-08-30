@@ -354,4 +354,4 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 #[include adxl345.cfg]
 ```
-- Après une redémarrage du firmware vus devriez voir le MCU de l'ADXL se cnnecter à Klipper.
+- Après sauvegarde et redémarrage du firmware vous devriez voir le MCU de l'ADXL se cnnecter à Klipper.
