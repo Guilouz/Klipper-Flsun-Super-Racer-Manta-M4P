@@ -1,4 +1,4 @@
-# Klipper Configuration for FLSUN Super Racer
+# Configuration Klipper pour FLSUN Super Racer
 
 ![maxresdefault](https://user-images.githubusercontent.com/12702322/187098254-be0a0182-cc04-401a-9e95-97dda4bdb1b6.jpeg)
 
@@ -32,6 +32,14 @@ Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 o
 - Case pour écran BigTreeTech PITFT70 + Support : https://www.printables.com/model/268989-flsun-super-racer-pitft70-case-mount
 - Easy connection pour ADXL : https://www.printables.com/model/268986-flsun-super-racer-easy-connection-for-adxl345
 - Support ADXL : https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer
+
+<br />
+
+## Schéma de câblage
+
+![Manta M4P SR](https://user-images.githubusercontent.com/12702322/187642336-86ce7061-2d1e-45b7-9825-e911b071344c.png)
+
+![Pins](https://user-images.githubusercontent.com/12702322/187642527-ae006f09-ed8e-44cc-a29e-cc6f2cf0a496.jpg)
 
 <br />
 
