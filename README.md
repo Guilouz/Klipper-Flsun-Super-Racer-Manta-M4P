@@ -21,7 +21,7 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 - Ecran BigTreeTech PITFT70 V2.0
 
 
-Une version de Klipperscreen optimisée pour la Super Racer est également disponible ici : [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
+Cette configuration de Klipper pour la Super Racer doit être utilisée avec cette version de KlipperScreen disponible ici : [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
 
 <br />
 Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
