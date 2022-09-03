@@ -285,7 +285,7 @@ sudo reboot
 
 - Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
 ```
-ls /dev/serial/by-id/
+ls /dev/serial/by-id/*
 ```
 - Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile plus tard.
 
@@ -305,8 +305,9 @@ make menuconfig
 ```
 - Puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
 
-- Saisissez la commande suivante pour compiler le firmware :
+- Saisissez les commandes suivantes pour compiler le firmware (une à la fois) :
 ```
+make clean
 make
 ```
 - Une fois la compilation terminée, vous avez alors deux possibilités :
