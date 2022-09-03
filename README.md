@@ -373,6 +373,12 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Il suffit ensuite dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
 ```
-#[include adxl345.cfg]
+[include adxl345.cfg]
 ```
 - Après sauvegarde et redémarrage du firmware vous devriez voir le MCU de l'ADXL se cnnecter à Klipper.
+
+- Pour mesurer les résonances, voir ici : https://www.klipper3d.org/Measuring_Resonances.html
+
+<br />
+
+## Utilisation de la Configuration
