@@ -382,3 +382,38 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 <br />
 
 ## Utilisation de la Configuration
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Faites un clic droit sur le fichier `printer.cfg` puis `Télécharger` pour faire une sauvegarde du fichier d'origine. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
+
+- Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer/archive/refs/heads/main.zip
+
+- Importez ensuite les fichiers `printer.cfg`, `macros.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
+
+- Redémarrez l'imprimante pour prendre effet.
+
+<br />
+
+## Calibrez votre imprimante
+
+Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec des macros ou directement sur sur l'écran.
+
+- Démarrez un PID BED et enregistrez la configuration.
+
+- Démarrez un PID HOTEND et enregistrez la configuration.
+
+- Démarrez une CALIBRATION ENDSTOP et enregistrez la configuration.
+
+- Démarrez une CALIBRATION DELTA et enregistrez la configuration.
+
+- Démarrez un BED LEVELING et enregistrez la configuration.
+
+- Ajustez le Z-OFFSET, vous devez d'abord aller à Z=0, puis ajuster la position de la buse avec une feuille de papier.
+  -Remarque : Le Z-Offset est enregistré en temps réel, y compris lors du réglage des babysteps.
+  
+- Pour calibrer votre extrudeur, voir ici : https://www.klipper3d.org/Rotation_Distance.html
+
+- Pour régler le Pressure Advance, voir ici : https://www.klipper3d.org/Pressure_Advance.html
+
+- Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
