@@ -8,6 +8,32 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 
 <br />
 
+## Table des matières
+
+- [Informations](#informations)
+- [Fichiers STL nécessaires](#fichiers-stl-nécessaires)
+- [Schéma de câblage](#schéma-de-câblage)
+- [Installation de Klipper via MainsailOS](#installation-de-klipper-via-mainsailos)
+- [Connexion via SSH](#connexion-via-ssh)
+- [Installation de Kiauh et de KlipperScreen](#installation-de-kiauh-et-de-klipperscreen)
+- [Désactivation du PCI Express sur le CM4](#désactivation-du-pci-express-sur-le-cm4)
+- [Installation de l'image de démarrage](#installation-de-limage-de-démarrage)
+- [Installation du driver pour écran DSI & Caméra CSI](#installation-du-driver-pour-écran-dsi--caméra-csi)
+- [Modification du fichier /boot/cmdline.txt](#modification-du-fichier-bootcmdlinetxt)
+- [Modification du fichier /boot/config.txt](#modification-du-fichier-bootconfigtxt)
+- [Installation du firmware Klipper sur la Manta M4P](#installation-du-firmware-klipper-sur-la-manta-m4p)
+- [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
+- [Utilisation de la Configuration](#utilisation-de-la-configuration)
+- [Calibrez votre imprimante](#calibrez-votre-imprimante)
+
+<br />
+
+Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
+
+[ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
+
+<br />
+
 ## Informations
 
 Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec cette configuration :
@@ -20,13 +46,11 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 - LED Neopixel (en option, voir fichier printer.cfg)
 - Ecran BigTreeTech PITFT70 V2.0
 
+<br />
 
 Cette configuration de Klipper pour la Super Racer doit être utilisée avec cette version de KlipperScreen disponible ici : [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
 
-<br />
-Si vous aimez mon travail, n'hésitez pas à me soutenir en me payant une 🍺 ou un ☕. Merci 🙂 
 
-[ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
 
 <br />
 
