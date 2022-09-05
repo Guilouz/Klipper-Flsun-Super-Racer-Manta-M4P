@@ -25,6 +25,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
+- [Mettre à jour Timelapse](#mettre-à-jour-timelapse)
 
 <br />
 
@@ -442,3 +443,26 @@ Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec
 - Pour régler le Pressure Advance, voir ici : https://www.klipper3d.org/Pressure_Advance.html
 
 - Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
+
+<br />
+
+## Mettre à jour Timelapse
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
+
+- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+```
+[update_manager timelapse]
+type: git_repo
+primary_branch: main
+path: ~/moonraker-timelapse
+origin: https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services: klipper moonraker
+```
+- Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Vous pouvez maintenant cliquer sur le bouton d'actualisation (toujours dans l'onglet Machine) sur la tuile `Gestionnaire de mise à jour`.
+
+- Vous verrez apparaître une nouvelle ligne `timelapse`.
