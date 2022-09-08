@@ -472,6 +472,26 @@ managed_services: klipper moonraker
 
 ## Utilisation du Neopixels Ring Light
 
+**Modes disponibles :**
+
+- Allumer les Neopixels
+- Eteindre les Neopixels
+- Allumer les Neopixels en bleu
+- Allumer les Neopixels en rouge
+- Allumer les Neopixels en vert
+- Allumer les Neopixels en jaune
+- Allumer les Neopixels en orange
+- Allumer les Neopixels en violet
+- Allumer les Neopixels en fonction de la température de la buse (toutes les LEDs)
+- Allumer les Neopixels en fonction de la température de la buse (LED par LED)
+- Allumer les Neopixels en fonction de la température du plateau (toutes les LEDs)
+- Allumer les Neopixels en fonction de la température du plateau (LED par LED)
+- Allumer les Neopixels en fonction de la progression d'impression (toutes les LEDs)
+- Allumer les Neopixels en fonction de la progression d'impression (LED par LED)
+- Allumer les Neopixels en fonction de la vitesse d'impression (toutes les LEDs)
+- Allumer les Neopixels en fonction de la vitesse d'impression (LED par LED)
+
+
 **Nécéssaire :**
 
 - Neon Flexible Tube 1m T1616-Side 10mm PCB : [Ici](https://fr.aliexpress.com/item/4000095850068.html?spm=a2g0o.store_pc_allProduct.8148356.60.19667739Amjjs4&pdp_npi=2%40dis%21EUR%21%E2%82%AC%2013%2C34%21%E2%82%AC%209%2C34%21%21%21%21%21%402100bddd16626284472777282ed43e%2112000015942927508%21sh)
