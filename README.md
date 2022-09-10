@@ -416,7 +416,7 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 
 - Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer/archive/refs/heads/main.zip
 
-- Importez ensuite les fichiers `printer.cfg`, `macros.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
+- Importez ensuite les fichiers `printer.cfg`, `macros.cfg`, `neopixels.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
 
 - Redémarrez l'imprimante pour prendre effet.
 
