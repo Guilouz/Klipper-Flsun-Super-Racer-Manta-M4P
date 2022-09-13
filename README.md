@@ -420,6 +420,16 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 
 - Redémarrez l'imprimante pour prendre effet.
 
+- Changez ensuite les Gcode de démarrage et Gcode de fin dans les paramètres de votre Slicer tels quels :
+
+  - Pour **Cura**:
+    - Gcode de démarrage : `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
+    - Gcode de fin : `END_PRINT`
+    
+  - For **PrusaSlicer** / **SuperSlicer**:
+    - Gcode de démarrage : `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
+    - Gcode de fin : `END_PRINT`
+
 <br />
 
 ## Calibrez votre imprimante
