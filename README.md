@@ -25,6 +25,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
+- [Utilisation de la Rétraction Firmware](#utilisation-de-la-rétraction-firmware)
 - [Mettre à jour Timelapse](#mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 
@@ -454,6 +455,20 @@ Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec
 - Pour régler le Pressure Advance, voir ici : https://www.klipper3d.org/Pressure_Advance.html
 
 - Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
+
+<br />
+
+## Utilisation de la Rétraction Firmware
+
+La rétraction Firmware donne un avantage comparé à la rétraction Slicer, elle peut être modifiée pendant une impression (depuis Mainsail ou Klipperscreen) et donc qu'un même gcode peut être imprimé avec des paramètres différents sans nécéssité d'être re-slicer.
+
+- Pour **Cura**, il est nécessaire d'installer le plugin `Klipper Settings Plugin` (disponible ici : [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) et d'activer le paramètre `Enable Firmware Retraction` comme cela :
+
+![Capture d’écran 2022-09-16 à 02 27 23](https://user-images.githubusercontent.com/12702322/190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04.jpg)
+
+- Pour **PrusaSclicer / SuperSlicer**, il est juste nécessaire d'activer le paramètre `Utiliser la rétraction du firmware` comme cela :
+
+![Capture d’écran 2022-09-16 à 02 12 47](https://user-images.githubusercontent.com/12702322/190532210-74016d9b-8cf9-4889-8367-d9a3510d8b56.jpg)
 
 <br />
 
