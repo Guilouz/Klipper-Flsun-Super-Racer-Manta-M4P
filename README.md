@@ -171,11 +171,11 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 ## Installation de Kiauh et de KlipperScreen
 
 - Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante pour installer Kiauh :
-```
+```python
 git clone https://github.com/th33xitus/kiauh.git
 ```
 - Puis saisissez la commande suivante pour lancer Kiauh :
-```
+```python
 ./kiauh/kiauh.sh
 ```
 - Saisissez `1` pour sélectionner `Installation` puis `5` pour installer KlipperScreen.
@@ -193,11 +193,11 @@ git clone https://github.com/th33xitus/kiauh.git
 La Manta M4P ne dispose pas de port PCI Express, il est donc nécessaire de désactiver la fonctionnalité pour éviter un message au démarrage.
 
 - Créez le fichier `disable-pcie-overlay.dts` avec la commande suivante : 
-```
+```python
 sudo nano /boot/overlays/disable-pcie-overlay.dts
 ```
 - Copier ce code dans la fenêtre qui s'affiche :
-```
+```python
 /*
  * disable-pcie-overlay.dts
  */
@@ -219,11 +219,11 @@ sudo nano /boot/overlays/disable-pcie-overlay.dts
 - Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
 
 - Il faut ensuite convertir le fichier `disable-pcie-overlay.dts` en `disable-pcie-overlay.dtbo` avec la commande suivante :
-```
+```python
 sudo dtc -@ -I dts -O dtb -o /boot/overlays/disable-pcie-overlay.dtbo /boot/overlays/disable-pcie-overlay.dts
 ```
 - Puis supprimer le fichier `disable-pcie-overlay.dts` avec la commande suivante :
-```
+```python
 sudo rm /boot/overlays/disable-pcie-overlay.dts
 ```
 
@@ -236,15 +236,15 @@ sudo rm /boot/overlays/disable-pcie-overlay.dts
 - Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
 
 - Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante :
-```
+```python
 sudo cp /home/pi/splash.png /boot/
 ```
 - Puis celle-ci :
-```
+```python
 sudo cp /home/pi/splash.txt /boot/
 ```
 - Et encore celle-là :
-```
+```python
 sudo cp /home/pi/initramfs.img /boot/
 ```
 - Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en faisant un clic-droit sur chacun d'eux puis `Delete`.
@@ -254,7 +254,7 @@ sudo cp /home/pi/initramfs.img /boot/
 ## Installation du driver pour écran DSI & Caméra CSI
 
 - Saisissez la commande suivante : 
-```
+```python
 sudo wget https://datasheets.raspberrypi.com/cmio/dt-blob-disp1-cam1.bin -O /boot/dt-blob.bin
 ```
 
@@ -263,11 +263,11 @@ sudo wget https://datasheets.raspberrypi.com/cmio/dt-blob-disp1-cam1.bin -O /boo
 ## Modification du fichier /boot/cmdline.txt
 
 - Saisissez la commande suivante : 
-```
+```python
 sudo nano /boot/cmdline.txt
 ```
 - Sur la fenêtre qui s'affiche, ajoutez ces éléments à la fin de la ligne :
-```
+```python
 logo.nologo loglevel=0 vt.global_cursor_default=0 splash silent quiet
 ```
 - Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
@@ -277,11 +277,11 @@ logo.nologo loglevel=0 vt.global_cursor_default=0 splash silent quiet
 ## Modification du fichier /boot/config.txt
 
 - Saisissez la commande suivante : 
-```
+```python
 sudo nano /boot/config.txt
 ```
 - Sur la fenêtre qui s'affiche, ajoutez ces éléments :
-```
+```python
 ## Splashcreen settings
 initramfs initramfs.img
 dtoverlay=disable-pcie-overlay
@@ -295,14 +295,14 @@ dtoverlay=dwc2,dr_mode=host
 - Et modifiez également ces lignes déjà présentes :
   - Retirez le "#" devant : disable_overscan=1
   - Ajoutez un "#" devant : #dtoverlay=vc4-fkms-v3d
-```
+```python
 disable_overscan=1
 #dtoverlay=vc4-fkms-v3d
 ```
 - Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
 
 - Vous pouvez maintenant saisir la commande suivante pour redémarrer le Raspberry Pi :
-```
+```python
 sudo reboot
 ```
 
@@ -311,18 +311,18 @@ sudo reboot
 ## Installation du firmware Klipper sur la Manta M4P
 
 - Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
-```
+```shell
 ls /dev/serial/by-id/*
 ```
 - Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile plus tard.
 
 - Saisissez ensuite ces commandes (une à la fois) :
-```
+```shell
 cd ~/klipper/
 make menuconfig
 ```
 - Sélectionnez ces paramètres :
-```
+```python
 * [*] Enable extra low-level configuration options
 * Micro-controller Architecture (STMicroelectronics STM32) --->
 * Processor model (STM32G0B1) --->
@@ -333,7 +333,7 @@ make menuconfig
 - Puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
 
 - Saisissez les commandes suivantes pour compiler le firmware (une à la fois) :
-```
+```python
 make clean
 make
 ```
@@ -348,11 +348,11 @@ make
 
   - Installation directe du firmware :
     - Saisissez la commande suivante :
-    ```
+    ```python
     make flash FLASH_DEVICE=/dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
     ```
     - Cela doit ressembler à ça :
-    ```
+    ```python
     make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_2F0034001050415833323520-if00
     ```
     - Il y aura un message d'erreur `dfu-util: Error during download get_status` après la mise à jour. N'y prêtez pas attention, le plus important c'est d'obtenir la ligne `File downloaded successfully`.
@@ -362,7 +362,7 @@ make
 - Rendez-vous dans l'onglet `Machine` puis importez les fichiers `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg`.
 
 - Une fois importés, ouvrez le fichier `printer.cfg` et modifiez la ligne suivante dans la section `Paramètres MCU` :
-```
+```python
 serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
 ```
 - Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
@@ -372,31 +372,31 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 ## Configuration pour l'ADXL345
 
 - Connectez-vous de nouveau en SSH puis saisissez les commandes suivantes (une à la fois) :
-```
+```python
 cd ~/klipper/
 sudo cp "./scripts/klipper-mcu-start.sh" /etc/init.d/klipper_mcu
 sudo update-rc.d klipper_mcu defaults
 ```
 - Il faut ensuite compiler le code du microcontrôleur en saisissant ces commandes (une à la fois) :
-```
+```python
 cd ~/klipper/
 make menuconfig
 ```
 - Sur le menu, définissez `Microcontroller Architecture` sur `Linux process`, puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
 
 - Pour compiler et installer le microcontrôleur, saisissez les commandes suivantes (une à la fois) :
-```
+```python
 sudo service klipper stop
 make flash
 sudo service klipper start
 ```
 - Il faut ensuite installer les dépendances nécessaires en saisissant ces commandes (une à la fois) :
-```
+```python
 sudo apt update
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Suivi de cette commande pour installer Numpy dans l'environnement de Klipper :
-```
+```python
 ~/klippy-env/bin/pip install -v numpy
 ```
 - Il suffit ensuite dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
@@ -479,7 +479,7 @@ La rétraction Firmware donne un avantage comparé à la rétraction Slicer, ell
 - Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
 
 - Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
-```
+```python
 [update_manager timelapse]
 type: git_repo
 primary_branch: main
@@ -531,11 +531,11 @@ managed_services: klipper moonraker
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
 - Faites un clic droit sur le fichier `printer.cfg` et modifiez la ligne suivante en supprimant le `#` au tout début :
-```
+```python
 [include neopixels.cfg]
 ```
 - Ouvrez maintenant le fichier `KlipperScreen.conf` et copiez tout ce code juste avant la ligne `#~# --- Do not edit below this line. This section is auto generated --- #~#` :
-```
+```python
 menu __main actions neopixels]
 name: {{ gettext('Neopixels') }}
 icon: neopixels
