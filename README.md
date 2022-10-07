@@ -316,13 +316,13 @@ cd ~/klipper/
 make menuconfig
 ```
 - Sélectionnez ces paramètres :
-```python
-* [*] Enable extra low-level configuration options
-* Micro-controller Architecture (STMicroelectronics STM32) --->
-* Processor model (STM32G0B1) --->
-* Bootloader offset (8KiB bootloader) --->
-* Clock Reference (8 MHz crystal) --->
-* Communication interface (USB (on PA11/PA12)) --->
+```
+[*] Enable extra low-level configuration options
+    Micro-controller Architecture (STMicroelectronics STM32) --->
+    Processor model (STM32G0B1)
+    Bootloader offset (8KiB bootloader) --->
+    Clock Reference (8 MHz crystal) --->
+    Communication interface (USB (on PA11/PA12)) --->
 ```
 - Puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
 
@@ -347,17 +347,7 @@ ls /dev/serial/by-id/*
 ```
 - Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile après.
 
-- Vous pouvez ensuite accéder à l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi.
-
-- Rendez-vous dans l'onglet `Machine` puis importez les fichiers `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg`.
-
-- Une fois importés, ouvrez le fichier `printer.cfg` et modifiez la ligne suivante dans la section `Paramètres MCU` :
-```python
-serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
-```
-- Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
-
-<br />
+<br /><br />
 
 - Note :  Pour les futures mises à jour du firmware Klipper pour la Manta M4P, il est possible de flasher directement le firmware via SSH, pour cela :
   - Saisissez la commande suivante :
@@ -414,15 +404,17 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 
 ## Utilisation de la Configuration
 
-- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
-
-- Faites un clic droit sur le fichier `printer.cfg` puis `Télécharger` pour faire une sauvegarde du fichier d'origine. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
-
 - Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer/archive/refs/heads/main.zip
 
-- Importez ensuite les fichiers `printer.cfg`, `macros.cfg`, `neopixels.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
+- Rendez-vous sur l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi.
 
-- Redémarrez l'imprimante pour prendre effet.
+- Rendez-vous dans l'onglet `Machine` puis importez les fichiers `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
+
+- Une fois importés, ouvrez le fichier `printer.cfg` et modifiez la ligne suivante dans la section `Paramètres MCU` :
+```python
+serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
+```
+- Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
 
 - Changez ensuite les Gcode de démarrage et Gcode de fin dans les paramètres de votre Slicer tels quels :
 
