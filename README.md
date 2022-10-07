@@ -310,13 +310,7 @@ sudo reboot
 
 ## Installation du firmware Klipper sur la Manta M4P
 
-- Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
-```shell
-ls /dev/serial/by-id/*
-```
-- Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile plus tard.
-
-- Saisissez ensuite ces commandes (une à la fois) :
+- Connectez-vous de nouveau en SSH et saisissez ces commandes (une à la fois) :
 ```shell
 cd ~/klipper/
 make menuconfig
@@ -337,27 +331,23 @@ make menuconfig
 make clean
 make
 ```
-- Une fois la compilation terminée, vous avez alors deux possibilités :
+- Récupérez le firmware nommé `Klipper.bin` sur la page de gauche dans le répertoire `/home/pi/klipper/out/`.
 
-  - Installation manuelle du firmware :
-    - Récupérez le firmware nommé `Klipper.bin` sur la page de gauche dans le répertoire `/home/pi/klipper/out/`.
-    - Renommez-le en `firmware.bin`.
-    - Copiez-le à la racine d'une carte SD (et non microSD) formatée en FAT32 et une taille d'allocation de 4096.
-    - Insérez la carte SD dans la Manta M4P puis allumez l'imprimante.
-    - L'installation dure que quelques secondes, pour vérifier que le firmware a bien été installé, le fichier sur la carte SD doit avoir été renommé en `FIRMWARE.CUR`.
+- Renommez-le en `firmware.bin`.
 
-  - Installation directe du firmware :
-    - Saisissez la commande suivante :
-    ```python
-    make flash FLASH_DEVICE=/dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
-    ```
-    - Cela doit ressembler à ça :
-    ```python
-    make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_2F0034001050415833323520-if00
-    ```
-    - Il y aura un message d'erreur `dfu-util: Error during download get_status` après la mise à jour. N'y prêtez pas attention, le plus important c'est d'obtenir la ligne `File downloaded successfully`.
+- Copiez-le à la racine d'une carte SD (et non microSD) formatée en FAT32 et une taille d'allocation de 4096.
 
-- Vous pouvez ensuite accéder à l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi ou l'URL  `http://mainsail.local`.
+- Insérez la carte SD dans la Manta M4P puis allumez l'imprimante.
+
+- L'installation dure que quelques secondes, pour vérifier que le firmware a bien été installé, le fichier sur la carte SD doit avoir été renommé en `FIRMWARE.CUR`.
+
+- Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
+```shell
+ls /dev/serial/by-id/*
+```
+- Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile après.
+
+- Vous pouvez ensuite accéder à l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi.
 
 - Rendez-vous dans l'onglet `Machine` puis importez les fichiers `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg`.
 
@@ -366,6 +356,19 @@ make
 serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
 ```
 - Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
+
+<br />
+
+- Note :  Pour les futures mises à jour du firmware Klipper pour la Manta M4P, il est possible de flasher directement le firmware via SSH, pour cela :
+  - Saisissez la commande suivante :
+  ```python
+  make flash FLASH_DEVICE=/dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
+  ```
+  - Cela doit ressembler à ça :
+  ```python
+  make flash FLASH_DEVICE=/dev/serial/by-id/usb-Klipper_stm32g0b1xx_2F0034001050415833323520-if00
+  ```
+  - Il y aura un message d'erreur `dfu-util: Error during download get_status` après la mise à jour. N'y prêtez pas attention, le plus important c'est d'obtenir la ligne `File downloaded successfully`.
 
 <br />
 
