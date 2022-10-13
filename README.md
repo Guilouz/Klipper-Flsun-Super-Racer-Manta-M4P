@@ -430,7 +430,7 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
 ## Calibrez votre imprimante
 
-Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec des macros ou directement sur l'écran.
+Ces calibrations peuvent être effectuées par l'interface Web de Mainsail avec des macros ou directement sur l'écran.
 
 - Démarrez une CALIBRATION ENDSTOP et enregistrez la configuration.
 
