@@ -422,7 +422,7 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
     - Gcode de démarrage : `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
     - Gcode de fin : `END_PRINT`
     
-  - For **PrusaSlicer** / **SuperSlicer**:
+  - Pour **PrusaSlicer** / **SuperSlicer**:
     - Gcode de démarrage : `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
     - Gcode de fin : `END_PRINT`
 
