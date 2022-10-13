@@ -430,11 +430,7 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
 ## Calibrez votre imprimante
 
-Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec des macros ou directement sur sur l'écran.
-
-- Démarrez un PID BED et enregistrez la configuration.
-
-- Démarrez un PID HOTEND et enregistrez la configuration.
+Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec des macros ou directement sur l'écran.
 
 - Démarrez une CALIBRATION ENDSTOP et enregistrez la configuration.
 
@@ -444,6 +440,10 @@ Ces calibrations peuvent être effectuées par l'interface dWeb de Mainsail avec
 
 - Ajustez le Z-OFFSET, vous devez d'abord aller à Z=0, puis ajuster la position de la buse avec une feuille de papier.
   -Remarque : Le Z-Offset est enregistré en temps réel, y compris lors du réglage des babysteps.
+  
+- Démarrez un PID BED et enregistrez la configuration.
+
+- Démarrez un PID HOTEND et enregistrez la configuration.
   
 - Pour calibrer votre extrudeur, voir ici : https://www.klipper3d.org/Rotation_Distance.html
 
