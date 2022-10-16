@@ -531,7 +531,7 @@ managed_services: klipper moonraker
 ```
 - Ouvrez maintenant le fichier `KlipperScreen.conf` et copiez tout ce code juste avant la ligne `#~# --- Do not edit below this line. This section is auto generated --- #~#` :
 ```python
-menu __main actions neopixels]
+[menu __main actions neopixels]
 name: {{ gettext('Neopixels') }}
 icon: neopixels
 
