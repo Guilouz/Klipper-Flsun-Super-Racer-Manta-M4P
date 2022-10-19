@@ -26,6 +26,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Utilisation de la Rétraction Firmware](#utilisation-de-la-rétraction-firmware)
+- [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
 - [Mettre à jour Timelapse](#mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 
@@ -464,6 +465,28 @@ La rétraction Firmware donne un avantage comparé à la rétraction Slicer, ell
 - Pour **PrusaSclicer / SuperSlicer**, il est juste nécessaire d'activer le paramètre `Utiliser la rétraction du firmware` comme cela :
 
 ![Capture d’écran 2022-09-16 à 02 12 47](https://user-images.githubusercontent.com/12702322/190532210-74016d9b-8cf9-4889-8367-d9a3510d8b56.jpg)
+
+<br />
+
+## Mettre à jour Mainsail
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
+
+- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+```
+[update_manager mainsail]
+type: web
+channel: stable
+repo: mainsail-crew/mainsail
+path: ~/mainsail
+```
+- Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Vous pouvez maintenant cliquer sur le bouton d'actualisation (toujours dans l'onglet Machine) sur la tuile `Gestionnaire de mise à jour`.
+
+- Vous verrez apparaître une nouvelle ligne `mainsail`.
 
 <br />
 
