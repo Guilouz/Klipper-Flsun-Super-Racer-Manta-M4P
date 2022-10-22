@@ -29,6 +29,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
 - [Mettre à jour Timelapse](#mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
+- [Remerciements](#remerciements)
 
 <br />
 
@@ -544,7 +545,7 @@ managed_services: klipper moonraker
 - Support (STL) : [Ici](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
 
 
-**Configuration:**
+**Configuration :**
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
@@ -755,3 +756,10 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+<br />
+
+## Remerciements
+
+- [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
+- [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
