@@ -27,7 +27,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Utilisation de la Rétraction Firmware](#utilisation-de-la-rétraction-firmware)
 - [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
-- [Mettre à jour Timelapse](#mettre-à-jour-timelapse)
+- [Installer et mettre à jour Timelapse](#installer-et-mettre-a-mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 - [Remerciements](#remerciements)
 
@@ -491,9 +491,15 @@ path: ~/mainsail
 
 <br />
 
-## Mettre à jour Timelapse
+## Installer et mettre à jour Timelapse
 
-- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+- Connectez-vous de nouveau en SSH puis saisissez les commandes suivantes (une à la fois) :
+```python
+cd ~/
+git clone https://github.com/mainsail-crew/moonraker-timelapse.git
+bash /home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
+```
+- Rendez-vous ensuite  sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
 - Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
 
