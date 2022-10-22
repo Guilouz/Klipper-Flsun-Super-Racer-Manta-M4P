@@ -11,11 +11,12 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 ## Table des matières
 
 - [Informations](#informations)
+- [Liens utiles](#liens-utiles)
 - [Fichiers STL nécessaires](#fichiers-stl-nécessaires)
 - [Schéma de câblage](#schéma-de-câblage)
 - [Installation de Klipper via MainsailOS](#installation-de-klipper-via-mainsailos)
 - [Connexion via SSH](#connexion-via-ssh)
-- [Installation de Kiauh et de KlipperScreen](#installation-de-kiauh-et-de-klipperscreen)
+- [Installation de KlipperScreen](#installation-de-klipperscreen)
 - [Désactivation du PCI Express sur le CM4](#désactivation-du-pci-express-sur-le-cm4)
 - [Installation de l'image de démarrage](#installation-de-limage-de-démarrage)
 - [Installation du driver pour écran DSI & Caméra CSI](#installation-du-driver-pour-écran-dsi--caméra-csi)
@@ -27,7 +28,8 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Utilisation de la Rétraction Firmware](#utilisation-de-la-rétraction-firmware)
 - [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
-- [Installer et mettre à jour Timelapse](#installer-et-mettre-a-mettre-à-jour-timelapse)
+- [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
+- [Installer et mettre à jour Timelapse](#installer-et-mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 - [Remerciements](#remerciements)
 
@@ -55,7 +57,21 @@ Cette configuration est compatible avec la FLSUN Super Racer uniquement et avec 
 
 Cette configuration de Klipper pour la Super Racer doit être utilisée avec cette version de KlipperScreen disponible ici : [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer)
 
+<br />
 
+## Liens utiles
+
+- Pour calibrer votre extrudeur, voir ici : https://www.klipper3d.org/Rotation_Distance.html
+
+- Pour régler le Pressure Advance, voir ici : https://www.klipper3d.org/Pressure_Advance.html
+
+- Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
+
+- Pour mesurer les Resonances avec l'ADXL, voir ici : https://www.klipper3d.org/Measuring_Resonances.html
+
+- Pour utiliser la fonction Exclude Objects, voir ici : https://docs.mainsail.xyz/features/exclude_objects
+
+- Pour afficher les vignettes à l'écran, voir ici : https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
 
 <br />
 
@@ -170,23 +186,19 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mains
 
 <br />
 
-## Installation de Kiauh et de KlipperScreen
+## Installation de KlipperScreen
 
-- Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante pour installer Kiauh :
-```python
-git clone https://github.com/th33xitus/kiauh.git
+- Dans la fenêtre d'invite de commande SSH, saisissez les commandes suivantes (une à la fois) :
 ```
-- Puis saisissez la commande suivante pour lancer Kiauh :
-```python
-./kiauh/kiauh.sh
+git clone https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
+sudo mv /home/pi/KlipperScreen-Flsun-Super-Racer /home/pi/KlipperScreen
+cd ~/KlipperScreen
+./scripts/KlipperScreen-install.sh
 ```
-- Saisissez `1` pour sélectionner `Installation` puis `5` pour installer KlipperScreen.
-
-- Une fois l'installation terminée, vous pouvez également mettre le système à jour en saisissant `2` pour sélectionner `Update`.
-
-- Vous pouvez ensuite quitter Kiauh en saisissant `B` puis `Q`.
-
-- Vous pourez également installer par la suite la version de KlipperScreen optimisée pour la Super Racer, voir : [KlipperScreen-Flsun-Super-Racer](https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer).
+- Puis saisissez la commande suivante pour redémarrer :
+```python
+sudo reboot
+```
 
 <br />
 
@@ -446,12 +458,6 @@ Ces calibrations peuvent être effectuées par l'interface Web de Mainsail avec 
 - Démarrez un PID BED et enregistrez la configuration.
 
 - Démarrez un PID HOTEND et enregistrez la configuration.
-  
-- Pour calibrer votre extrudeur, voir ici : https://www.klipper3d.org/Rotation_Distance.html
-
-- Pour régler le Pressure Advance, voir ici : https://www.klipper3d.org/Pressure_Advance.html
-
-- Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
 
 <br />
 
@@ -488,6 +494,30 @@ path: ~/mainsail
 - Vous pouvez maintenant cliquer sur le bouton d'actualisation (toujours dans l'onglet Machine) sur la tuile `Gestionnaire de mise à jour`.
 
 - Vous verrez apparaître une nouvelle ligne `mainsail`.
+
+<br />
+
+## Mettre à jour KlipperScreen
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
+
+- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: /home/pi/KlipperScreen
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
+env: /home/pi/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+- Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Vous pouvez maintenant cliquer sur le bouton d'actualisation (toujours dans l'onglet Machine) sur la tuile `Gestionnaire de mise à jour`.
+
+- Vous verrez apparaître une nouvelle ligne `KlipperScreen`.
 
 <br />
 
