@@ -554,23 +554,22 @@ managed_services: klipper moonraker
 
 **Modes disponibles :**
 
-- Allumer les Neopixels
-- Eteindre les Neopixels
-- Allumer les Neopixels en bleu
-- Allumer les Neopixels en rouge
-- Allumer les Neopixels en vert
-- Allumer les Neopixels en jaune
-- Allumer les Neopixels en orange
-- Allumer les Neopixels en violet
-- Allumer les Neopixels en fonction de la température de la buse (toutes les LEDs)
-- Allumer les Neopixels en fonction de la température de la buse (LED par LED)
-- Allumer les Neopixels en fonction de la température du plateau (toutes les LEDs)
-- Allumer les Neopixels en fonction de la température du plateau (LED par LED)
-- Allumer les Neopixels en fonction de la progression d'impression (toutes les LEDs)
-- Allumer les Neopixels en fonction de la progression d'impression (LED par LED)
-- Allumer les Neopixels en fonction de la vitesse d'impression (toutes les LEDs)
-- Allumer les Neopixels en fonction de la vitesse d'impression (LED par LED)
-
+- Allumer les Neopixels avec la macro `NEOPIXEL_ON`
+- Eteindre les Neopixels avec la macro `NEOPIXEL_OFF`
+- Allumer les Neopixels en bleu avec la macro `NEOPIXEL_BLUE`
+- Allumer les Neopixels en rouge avec la macro `NEOPIXEL_RED`
+- Allumer les Neopixels en vert avec la macro `NEOPIXEL_GREEN`
+- Allumer les Neopixels en jaune avec la macro `NEOPIXEL_YELLOW`
+- Allumer les Neopixels en orange avec la macro `NEOPIXEL_ORANGE`
+- Allumer les Neopixels en violet avec la macro `NEOPIXEL_VIOLET`
+- Allumer les Neopixels en fonction de la température de la buse (toutes les LEDs) avec la macro `HOTEND_GLOW`
+- Allumer les Neopixels en fonction de la température de la buse (LED par LED) avec la macro `HOTEND_GLOW`
+- Allumer les Neopixels en fonction de la température du plateau (toutes les LEDs) avec la macro `BED_GLOW`
+- Allumer les Neopixels en fonction de la température du plateau (LED par LED) avec la macro `BED_PROGRESS`
+- Allumer les Neopixels en fonction de la progression d'impression (toutes les LEDs) avec la macro `PERCENT_GLOW`
+- Allumer les Neopixels en fonction de la progression d'impression (LED par LED) avec la macro `PERCENT_PROGRESS`
+- Allumer les Neopixels en fonction de la vitesse d'impression (toutes les LEDs) avec la macro `SPEED_GLOW`
+- Allumer les Neopixels en fonction de la vitesse d'impression (LED par LED) avec la macro `SPEED_PROGRESS`
 
 **Nécéssaire :**
 
