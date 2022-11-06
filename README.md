@@ -25,8 +25,8 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Installation du firmware Klipper sur la Manta M4P](#installation-du-firmware-klipper-sur-la-manta-m4p)
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
+- [Changements côté Slicers](#changements-côté-slicers)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
-- [Utilisation de la Rétraction Firmware](#utilisation-de-la-rétraction-firmware)
 - [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
 - [Installer et mettre à jour Timelapse](#installer-et-mettre-à-jour-timelapse)
@@ -410,7 +410,21 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 [include adxl345.cfg]
 ```
-- Après sauvegarde et redémarrage du firmware vous devriez voir le MCU de l'ADXL se cnnecter à Klipper.
+- Après sauvegarde et redémarrage du firmware vous devriez voir le MCU de l'ADXL se connecter à Klipper.
+
+- Vous pouvez tester l'accéléromètre en saisissant cette commande :
+```
+ACCELEROMETER_QUERY
+```
+- Quelque chose comme ceci doit être retourné :
+```
+accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
+```
+- Entrez ensuite cette commande pour mesurer le bruit de l'accéléromètre pour chaque axe :
+```
+MEASURE_AXES_NOISE
+```
+- Vous devriez obtenir des chiffres de référence pour le bruit de l'accéléromètre sur les axes (ils devraient être compris dans la plage de ~ 1-100). Un bruit d'axes trop élevé (par exemple 1000 et plus) peut indiquer des problèmes de capteur, des problèmes d'alimentation ou des ventilateurs déséquilibrés trop bruyants.
 
 - Pour mesurer les résonances, voir ici : https://www.klipper3d.org/Measuring_Resonances.html
 
@@ -430,7 +444,11 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 ```
 - Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
 
-- Changez ensuite les Gcode de démarrage et Gcode de fin dans les paramètres de votre Slicer tels quels :
+<br />
+
+## Changements côté Slicers
+
+- Changez le Gcode de démarrage et le Gcode de fin dans les paramètres de votre Slicer tels quels :
 
   - Pour **Cura**:
     - Gcode de démarrage : `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
@@ -440,11 +458,27 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
     - Gcode de démarrage : `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
     - Gcode de fin : `END_PRINT`
 
+ <br />
+
+- La rétraction Firmware donne un avantage comparé à la rétraction Slicer, elle peut être modifiée pendant une impression (depuis Mainsail ou Klipperscreen) et donc qu'un même gcode peut être imprimé avec des paramètres différents sans nécéssité d'être re-slicer.
+
+  - Pour **Cura**, il est nécessaire d'installer le plugin `Klipper Settings Plugin` (disponible ici : [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) et d'activer le paramètre `Enable Firmware Retraction` comme cela :
+  
+  ![190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04](https://user-images.githubusercontent.com/12702322/197653257-9a4c29cc-64c0-4aa4-9077-32b30a9634d2.jpg)
+
+  - Pour **PrusaSclicer / SuperSlicer**, il est juste nécessaire d'activer le paramètre `Utiliser la rétraction du firmware` comme cela :
+
+![Capture d’écran 2022-09-16 à 02 12 47](https://user-images.githubusercontent.com/12702322/190532210-74016d9b-8cf9-4889-8367-d9a3510d8b56.jpg)
+
 <br />
 
 ## Calibrez votre imprimante
 
 Ces calibrations peuvent être effectuées par l'interface Web de Mainsail avec des macros ou directement sur l'écran.
+
+- Démarrez un PID BED et enregistrez la configuration.
+
+- Démarrez un PID HOTEND et enregistrez la configuration.
 
 - Démarrez une CALIBRATION ENDSTOP et enregistrez la configuration.
 
@@ -454,24 +488,6 @@ Ces calibrations peuvent être effectuées par l'interface Web de Mainsail avec 
 
 - Ajustez le Z-OFFSET, vous devez d'abord aller à Z=0, puis ajuster la position de la buse avec une feuille de papier.
   -Remarque : Le Z-Offset est enregistré en temps réel, y compris lors du réglage des babysteps.
-  
-- Démarrez un PID BED et enregistrez la configuration.
-
-- Démarrez un PID HOTEND et enregistrez la configuration.
-
-<br />
-
-## Utilisation de la Rétraction Firmware
-
-La rétraction Firmware donne un avantage comparé à la rétraction Slicer, elle peut être modifiée pendant une impression (depuis Mainsail ou Klipperscreen) et donc qu'un même gcode peut être imprimé avec des paramètres différents sans nécéssité d'être re-slicer.
-
-- Pour **Cura**, il est nécessaire d'installer le plugin `Klipper Settings Plugin` (disponible ici : [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) et d'activer le paramètre `Enable Firmware Retraction` comme cela :
-
-![Capture d’écran 2022-09-16 à 02 27 23](https://user-images.githubusercontent.com/12702322/190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04.jpg)
-
-- Pour **PrusaSclicer / SuperSlicer**, il est juste nécessaire d'activer le paramètre `Utiliser la rétraction du firmware` comme cela :
-
-![Capture d’écran 2022-09-16 à 02 12 47](https://user-images.githubusercontent.com/12702322/190532210-74016d9b-8cf9-4889-8367-d9a3510d8b56.jpg)
 
 <br />
 
@@ -479,9 +495,7 @@ La rétraction Firmware donne un avantage comparé à la rétraction Slicer, ell
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
-- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
-
-- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+- Ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
 ```
 [update_manager mainsail]
 type: web
@@ -501,9 +515,7 @@ path: ~/mainsail
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
-- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
-
-- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+- Ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
 ```
 [update_manager KlipperScreen]
 type: git_repo
@@ -531,9 +543,7 @@ bash /home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
 ```
 - Rendez-vous ensuite  sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
-- Faites un clic-droit sur le fichier `moonraker.conf` puis `Télécharger` pour effectuer une sauvagrder du fichier original. Conservez soigneusement ce fichier pour un éventuel retour en arrière.
-
-- Maintenant, toujours sur Mainsail, ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+- Ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
 ```python
 [update_manager timelapse]
 type: git_repo
@@ -584,11 +594,13 @@ managed_services: klipper moonraker
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
-- Faites un clic droit sur le fichier `printer.cfg` et modifiez la ligne suivante en supprimant le `#` au tout début :
+- Ouvrez le fichier `printer.cfg` et modifiez la ligne suivante en supprimant le `#` au tout début :
 ```python
 [include neopixels.cfg]
 ```
-- Ouvrez maintenant le fichier `KlipperScreen.conf` et copiez tout ce code juste avant la ligne `#~# --- Do not edit below this line. This section is auto generated --- #~#` :
+- Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Toujours sur l'onglet `Machine`, ouvrez maintenant le fichier `KlipperScreen.conf` et copiez tout ce code juste avant la ligne `#~# --- Do not edit below this line. This section is auto generated --- #~#` :
 ```python
 [menu __main actions neopixels]
 name: {{ gettext('Neopixels') }}
