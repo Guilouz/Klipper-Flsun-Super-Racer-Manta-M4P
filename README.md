@@ -210,7 +210,7 @@ La Manta M4P ne dispose pas de port PCI Express, il est donc nécessaire de dés
 ```python
 sudo nano /boot/overlays/disable-pcie-overlay.dts
 ```
-- Copier ce code dans la fenêtre qui s'affiche :
+- Copiez ce code dans la fenêtre qui s'affiche :
 ```python
 /*
  * disable-pcie-overlay.dts
@@ -236,7 +236,7 @@ sudo nano /boot/overlays/disable-pcie-overlay.dts
 ```python
 sudo dtc -@ -I dts -O dtb -o /boot/overlays/disable-pcie-overlay.dtbo /boot/overlays/disable-pcie-overlay.dts
 ```
-- Puis supprimer le fichier `disable-pcie-overlay.dts` avec la commande suivante :
+- Puis supprimez le fichier `disable-pcie-overlay.dts` avec la commande suivante :
 ```python
 sudo rm /boot/overlays/disable-pcie-overlay.dts
 ```
@@ -359,7 +359,7 @@ make
 ```shell
 ls /dev/serial/by-id/*
 ```
-- Copier la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile après.
+- Copiez la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile après.
 
 <br /><br />
 
@@ -406,11 +406,13 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```python
 ~/klippy-env/bin/pip install -v numpy
 ```
-- Il suffit ensuite dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
+- Il suffit ensuite de dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
 ```
 [include adxl345.cfg]
 ```
-- Après sauvegarde et redémarrage du firmware vous devriez voir le MCU de l'ADXL se connecter à Klipper.
+- Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Après redémarrage du firmware vous devriez voir le MCU de l'ADXL se connecter à Klipper.
 
 - Vous pouvez tester l'accéléromètre en saisissant cette commande :
 ```
@@ -442,7 +444,9 @@ MEASURE_AXES_NOISE
 ```python
 serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu précédemment)
 ```
-- Après sauvegarde et redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
+- Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Après redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
 
 <br />
 
