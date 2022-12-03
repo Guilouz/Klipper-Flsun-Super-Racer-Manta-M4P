@@ -245,7 +245,8 @@ sudo rm /boot/overlays/disable-pcie-overlay.dts
 
 ## Installation de l'image de démarrage
 
-- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/9457081/Boot.Pack.zip)
+- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/10146997/Boot.Pack.zip)
+
 
 - Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
 
