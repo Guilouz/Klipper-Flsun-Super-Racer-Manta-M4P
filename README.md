@@ -456,12 +456,41 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 - Changez le Gcode de démarrage et le Gcode de fin dans les paramètres de votre Slicer tels quels :
 
   - Pour **Cura**:
-    - Gcode de démarrage : `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
-    - Gcode de fin : `END_PRINT`
+    - Gcode de démarrage :
+      ```
+      ;Nozzle diameter = {machine_nozzle_size}
+      ;Filament type = {material_type}
+      ;Filament name = {material_brand} {material_name}
+      ;Filament weight = {filament_weight}
+      ;M109 S{material_print_temperature}
+      ;M190 S{material_bed_temperature}
+
+      START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}
+      ```
+    - Gcode de fin :
+      ```
+      END_PRINT
+      ```
     
   - Pour **PrusaSlicer** / **SuperSlicer**:
-    - Gcode de démarrage : `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
-    - Gcode de fin : `END_PRINT`
+    - Gcode de démarrage :
+      ```
+      START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
+      ```
+    - Gcode de fin :
+      ```
+      END_PRINT
+      ```
+
+  - Pour **LycheeSlicer**:
+    - Gcode de démarrage :
+      ```
+      START_PRINT BED_TEMP={bed_temp} EXTRUDER_TEMP={temp}
+      ```
+    - Gcode de fin :
+      ```
+      END_PRINT
+      ```
 
  <br />
 
