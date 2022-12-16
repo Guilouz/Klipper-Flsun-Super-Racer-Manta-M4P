@@ -476,6 +476,8 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
     - Gcode de démarrage :
       ```
       START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
+	   M104 S[first_layer_temperature]
+	   M190 S[first_layer_bed_temperature]
       ```
     - Gcode de fin :
       ```
