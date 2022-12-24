@@ -101,60 +101,72 @@ Cette configuration de Klipper pour la Super Racer doit être utilisée avec cet
 
 - Lors de l'ouverture de Raspberry Pi Imager, les éléments suivants s'affichent :
 
-![1](https://user-images.githubusercontent.com/12702322/187550209-0614dc72-369c-4dbd-be49-226c02d87a56.png)
+![001](https://user-images.githubusercontent.com/12702322/209439292-4f0a528c-35f6-4648-a61c-d26c853f5343.jpg)
 
-- Sélectionnez `CHOOSE OS` et une fenêtre contextuelle s'ouvrira comme illustré ci-dessous.
+- Sélectionnez `CHOISISSEZ L'OS` et une fenêtre contextuelle s'ouvrira comme illustré ci-dessous.
 - Faites défiler jusqu'à `Other specific-purpose OS` :
 
-![rpi-os-popup](https://user-images.githubusercontent.com/12702322/187550564-abc9dc12-edd4-4057-8bdf-85db27ec5158.png)
+![002](https://user-images.githubusercontent.com/12702322/209439343-4af9c111-219e-47a3-b659-ce6bea414a8d.jpg)
 
 - Sélectionnez `3D printing` :
 
-![rpi-3d-printing](https://user-images.githubusercontent.com/12702322/187550693-8ab015a1-f267-41c0-afbd-0a01717c3198.png)
+![003](https://user-images.githubusercontent.com/12702322/209439366-c497b0cf-9d77-45ab-abd6-a1977951e220.jpg)
 
 - Sélectionnez `Mainsail OS` :
 
-![rpi-mainsailos](https://user-images.githubusercontent.com/12702322/187551003-b290bab8-4f2b-4ff7-bf77-7baa79296cf3.png)
-![rpi-mainsailos-choosen](https://user-images.githubusercontent.com/12702322/187551046-dcfd049b-3fad-45b3-966d-bc9693e967c1.png)
+![004](https://user-images.githubusercontent.com/12702322/209439427-b7fe98f3-d38e-46b5-bc8d-9109d87557bf.jpg)
 
-- Une fois cela fait, cliquez sur `STORAGE` et sélectionnez la carte microSD souhaitée ou l'eMMC (voir la documentation de BigTreeTech page 21 : [ici](https://github.com/bigtreetech/Manta-M4P/blob/master/BIGTREETECH_M4P%26CB1%20User%20Manual.pdf)) :
+- Puis la version désirée (32-bit ou 64-bit) :
 
-![rpi-choose-storage](https://user-images.githubusercontent.com/12702322/187551309-86af4395-e9b4-45c7-bae8-964357d6e8c2.png)
+![005](https://user-images.githubusercontent.com/12702322/209439432-099b1f87-9c28-4bb5-81dc-99362dddc877.jpg)
+
+- Une fois cela fait, cliquez sur `CHOISISSEZ LE STOCKAGE` et sélectionnez la carte microSD souhaitée ou l'eMMC (voir la documentation de BigTreeTech page 21 : [ici](https://github.com/bigtreetech/Manta-M4P/blob/master/BIGTREETECH_M4P%26CB1%20User%20Manual.pdf)) :
+
+![006](https://user-images.githubusercontent.com/12702322/209439491-9802bf1a-c9c8-4115-bd37-ba8be03c32a1.jpg)
 
 - Le nom d'hôte, le SSH, le Wi-Fi, la langue et de nombreux autres paramètres peuvent désormais être parcourus et préconfigurés dans un menu de configuration, en cliquant sur la petite roue dentée dans le coin droit :
 
-![rpi-cogwheel](https://user-images.githubusercontent.com/12702322/187552384-b01a7219-66eb-4906-aab1-c5e61db1a123.png)
+![007](https://user-images.githubusercontent.com/12702322/209439780-be655081-de4d-4516-bb54-612022e7b1f0.jpg)
 
 - Facultatif : Configurez votre nom d'hôte préféré. Si vous le modifiez, l'URL sera modifiée en conséquence.
-Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://mainsail.local`
+Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://flsun-super-racer.local`.
 
-![rpi-setup-ssh](https://user-images.githubusercontent.com/12702322/187552731-a68581d8-d678-4db2-a9fa-0a56085fd505.png)
+- Activez l'option `Enable SSH` comme suit :
+
+![008](https://user-images.githubusercontent.com/12702322/209439565-76d73483-7a50-43e5-a8a4-3bd26445b952.jpg)
 
 - Changez votre mot de passe, cette étape est fortement recommandée ! Veuillez ne pas changer le nom d'utilisateur !
-À ce stade, la configuration de MainsailOS repose sur l'utilisateur `pi`.
+À ce stade, la configuration de MainsailOS repose sur l'utilisateur `pi` :
 
-![rpi-setup-username](https://user-images.githubusercontent.com/12702322/187552946-fbdc26c9-d097-497d-be7c-d2ed47d7b00a.png)
+![009](https://user-images.githubusercontent.com/12702322/209439628-2eb7403d-a6d9-4e2a-92c2-f9a457769181.jpg)
 
 - Entrez les informations de votre réseau votre Wi-Fi :
 
-![rpi-setup-wifi](https://user-images.githubusercontent.com/12702322/187553076-6cd4d36d-684a-4655-a16e-47e3517be9ba.png)
+![010](https://user-images.githubusercontent.com/12702322/209439704-7a95dad4-7328-4df7-893f-3f8c0e3b13a8.jpg)
 
 - La dernière étape gère votre fuseau horaire et la disposition du clavier (cette dernière peut affecter votre langue dans certains cas) :
 
-![rpi-timezone](https://user-images.githubusercontent.com/12702322/187553285-465ca67b-48b9-404b-aa14-1d1f5b04d82a.png)
+![011](https://user-images.githubusercontent.com/12702322/209439720-4fb4b257-10cd-48f8-8a04-654a1aa406e5.jpg)
 
-- Avec toutes les options souhaitées préconfigurées, cliquez sur `WRITE` et acceptez l'avertissement :
+- Avec toutes les options souhaitées préconfigurées, cliquez sur `ÉCRIRE` :
 
-![rpi-write](https://user-images.githubusercontent.com/12702322/187553421-ececfaed-034d-4e11-99c5-7434f152f3f7.png)
-![rpi-warning](https://user-images.githubusercontent.com/12702322/187553453-c095f88d-27a2-4ef0-adcb-c7db5a1f481a.png)
+![012](https://user-images.githubusercontent.com/12702322/209439815-56274a2a-e7ed-4454-9fb0-c67b75d3a724.jpg)
 
-- Cela prendra un certain temps pour écrire l'image sur la carte microSD ou l'eMMC. Une fois le transfert terminé, une vérification sera effectuée.
+- Puis acceptez l'avertissement :
 
-![rpi-writing](https://user-images.githubusercontent.com/12702322/187553852-fae8bc38-a616-430f-a09d-303bf053a891.png)
+![013](https://user-images.githubusercontent.com/12702322/209439842-911fe29b-1682-40d7-85e5-499a423b6345.jpg)
 
-- Une fois terminé, cliquez sur `CONTINUE` :
+- Cela prendra un certain temps pour écrire l'image sur la carte microSD ou l'eMMC :
 
-![rpi-finished](https://user-images.githubusercontent.com/12702322/187553911-d12384ae-1c1c-4529-9115-da5d283d85cc.png)
+![014](https://user-images.githubusercontent.com/12702322/209439856-64d53e40-028c-4e3a-a348-885ba5a25890.jpg)
+
+-  Une fois le transfert terminé, une vérification sera effectuée :
+
+![015](https://user-images.githubusercontent.com/12702322/209439890-190698fc-4908-481d-8c1b-3fd1f6632a54.jpg)
+
+- Une fois terminé, cliquez sur `CONTINUER` :
+
+![016](https://user-images.githubusercontent.com/12702322/209439914-a571c3ea-7ccb-4bb7-bb28-66c980f196cb.jpg)
 
 - L'installation est maintenant terminée.
 
@@ -504,7 +516,7 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
   - Pour **PrusaSclicer / SuperSlicer**, il est juste nécessaire d'activer le paramètre `Utiliser la rétraction du firmware` comme cela :
 
-![Capture d’écran 2022-09-16 à 02 12 47](https://user-images.githubusercontent.com/12702322/190532210-74016d9b-8cf9-4889-8367-d9a3510d8b56.jpg)
+![206947349-f522cf58-ce9f-4bd4-88a6-e73893efeaa3](https://user-images.githubusercontent.com/12702322/209440013-48d939ae-3d20-46bd-aed7-29a66cddfd08.jpg)
 
 <br />
 
