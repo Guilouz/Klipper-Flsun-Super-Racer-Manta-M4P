@@ -222,6 +222,11 @@ sudo apt clean
 sudo rpi-update
 ```
 
+- Puis saisissez la commande suivante pour redémarrer :
+```python
+sudo reboot
+```
+
 <br />
 
 ## Installation de KlipperScreen
