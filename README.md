@@ -293,19 +293,18 @@ sudo rm /boot/overlays/disable-pcie-overlay.dts
 
 - Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
 
-- Dans la fenêtre d'invite de commande SSH, saisissez la commande suivante :
+- Dans la fenêtre d'invite de commande SSH, saisissez les commandes suivantes (une à la fois) :
 ```python
 sudo cp /home/pi/splash.png /boot/
-```
-- Puis celle-ci :
-```python
 sudo cp /home/pi/splash.txt /boot/
-```
-- Et encore celle-là :
-```python
 sudo cp /home/pi/initramfs.img /boot/
 ```
-- Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en faisant un clic-droit sur chacun d'eux puis `Delete`.
+- Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en saisissant les commandes suivantes (une à la fois) :
+```python
+sudo rm /home/pi/splash.png
+sudo rm /home/pi/splash.txt
+sudo rm /home/pi/initramfs.img
+```
 
 <br />
 
