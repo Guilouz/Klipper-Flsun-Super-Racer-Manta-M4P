@@ -16,6 +16,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Schéma de câblage](#schéma-de-câblage)
 - [Installation de Klipper via MainsailOS](#installation-de-klipper-via-mainsailos)
 - [Connexion via SSH](#connexion-via-ssh)
+- [Mise à jour des dépendances](#mise-à-jour-des-dépendances)
 - [Installation de KlipperScreen](#installation-de-klipperscreen)
 - [Désactivation du PCI Express sur le CM4](#désactivation-du-pci-express-sur-le-cm4)
 - [Installation de l'image de démarrage](#installation-de-limage-de-démarrage)
@@ -194,6 +195,32 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://flsun
 - Une fois connecté, sur la partie gauche de la fenêtre vous avez l'accès aux dossiers et fichiers de votre Raspberry Pi et à la fenêtre d'invite de commande SSH sur la partie droite :
 
 ![Capture d’écran 2022-12-24 à 15 36 40](https://user-images.githubusercontent.com/12702322/209440829-aa86e3ff-5e24-4026-b321-370150fa3e58.jpg)
+
+<br />
+
+## Mise à jour des dépendances
+
+- Dans la fenêtre d'invite de commande SSH, entrez la commande suivante pour télécharger la liste des mises à jour (vous devrez entrer le mot de passe root) :
+```
+sudo apt update
+```
+
+- Puis cette commande pour les installer :
+```
+sudo apt full-upgrade
+```
+
+- Supprimez ensuite les dépendances inutiles (une commande à la fois) :
+```
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
+```
+
+- Vous pouvez également mettre à jour le firmware de votre Raspberry Pi en saisissant cette commande :
+```
+sudo rpi-update
+```
 
 <br />
 
