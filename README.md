@@ -338,25 +338,35 @@ logo.nologo loglevel=0 vt.global_cursor_default=0 splash silent quiet
 ```python
 sudo nano /boot/config.txt
 ```
-- Sur la fenêtre qui s'affiche, ajoutez ces éléments :
-```python
+- Sur la fenêtre qui s'affiche, ajoutez ces éléments au début du fichier :
+```
 ## Splashcreen settings
 initramfs initramfs.img
 dtoverlay=disable-pcie-overlay
 disable_splash=1
 boot_delay=0
+```
+![Capture d’écran 2022-12-24 à 16 07 40](https://user-images.githubusercontent.com/12702322/209442001-4a7a2e8c-d9c0-455a-a0ea-c4e31f396155.jpg)
 
+- Puis modifiez également ces lignes déjà présentes en ajoutant un "#" devant `dtoverlay=vc4-fkms-v3d` comme suit :
+```
+# Enable DRM VC4 V3D driver
+#dtoverlay=vc4-kms-v3d
+max_framebuffers=2
+```
+![Capture d’écran 2022-12-24 à 16 08 48](https://user-images.githubusercontent.com/12702322/209442063-3cc9816e-2477-4fba-8e12-bc1940143833.jpg)
+
+- Puis également ces lignes en remplaçant la ligne `otg_mode=1` par `dtoverlay=dwc2,dr_mode=host` comme suit :
+
+```
 [cm4]
-## Enable USB serial
+# Enable host mode on the 2711 built-in XHCI USB controller.
+# This line should be removed if the legacy DWC2 controller is required
+# (e.g. for USB device mode) or if USB support is not required.
 dtoverlay=dwc2,dr_mode=host
 ```
-- Et modifiez également ces lignes déjà présentes :
-  - Retirez le "#" devant : disable_overscan=1
-  - Ajoutez un "#" devant : #dtoverlay=vc4-fkms-v3d
-```python
-disable_overscan=1
-#dtoverlay=vc4-fkms-v3d
-```
+![Capture d’écran 2022-12-24 à 17 01 17](https://user-images.githubusercontent.com/12702322/209443460-a3067521-2496-4134-9d15-36dbf2763f37.jpg)
+
 - Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
 
 - Vous pouvez maintenant saisir la commande suivante pour redémarrer le Raspberry Pi :
