@@ -178,23 +178,22 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://flsun
 
 - Lancez-le puis cliquez sur l'icône `Session` puis `SSH` : 
 
-![Capture d’écran 2022-08-31 à 00 27 15](https://user-images.githubusercontent.com/12702322/187554613-7c3b7776-2e9e-41cd-a331-9bcb29324e07.jpg)
-
-![Capture d’écran 2022-08-31 à 00 28 03](https://user-images.githubusercontent.com/12702322/187554724-47adc66d-b76a-4351-8d81-c077c41072c2.jpg)
+![01](https://user-images.githubusercontent.com/12702322/209440762-d9efc473-22c3-484b-8250-71bb05db1e5f.jpg)
+![02](https://user-images.githubusercontent.com/12702322/209440764-45f23603-8b33-4700-af43-ede574bf6287.jpg)
 
 - Renseignez l'adresse IP de votre Raspberry Pi dans le champ `Remote Host`, cochez la case `Specify username` et saisissez le nom d'utilisateur `pi` dans le champ puis cliquez sur `OK` :
 
-![Capture d’écran 2022-08-31 à 00 31 14](https://user-images.githubusercontent.com/12702322/187555264-3c1497d8-b329-46e5-8df4-bd8609678e5c.jpg)
+![Capture d’écran 2022-12-24 à 15 34 31](https://user-images.githubusercontent.com/12702322/209440775-9cb69f62-15b2-4407-8907-33c1733d8983.jpg)
 
 - Sur la fenêtre qui s'affiche, saisissez votre mot de passe précédemment défini dans Raspberry Pi Imager (il ne s'affiche pas à la saisie, c'est normal) : 
 
-![Capture d’écran 2022-08-31 à 00 34 09](https://user-images.githubusercontent.com/12702322/187555380-327b9ae3-29c5-4d81-a595-d754525cc044.jpg)
+![Capture d’écran 2022-12-24 à 15 39 29](https://user-images.githubusercontent.com/12702322/209440822-6af829bc-0f36-42c1-be75-faf411ea6a5c.jpg)
 
 - Une fenêtre d'autorisation va s'afficher, autorisez-la. Il est également possible qu'une autre fenêtre vous demandant de changer le mot de passe s'affiche, ignorez-là.
 
 - Une fois connecté, sur la partie gauche de la fenêtre vous avez l'accès aux dossiers et fichiers de votre Raspberry Pi et à la fenêtre d'invite de commande SSH sur la partie droite :
 
-![Capture d’écran 2022-08-31 à 00 37 25](https://user-images.githubusercontent.com/12702322/187555942-ff82a7b1-a43e-4c75-9fd8-7a1ccd43fd58.jpg)
+![Capture d’écran 2022-12-24 à 15 36 40](https://user-images.githubusercontent.com/12702322/209440829-aa86e3ff-5e24-4026-b321-370150fa3e58.jpg)
 
 <br />
 
