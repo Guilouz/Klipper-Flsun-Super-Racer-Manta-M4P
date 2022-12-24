@@ -446,22 +446,16 @@ sudo update-rc.d klipper_mcu defaults
 cd ~/klipper/
 make menuconfig
 ```
-- Sur le menu, définissez `Microcontroller Architecture` sur `Linux process`, puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
+- Sur le menu, définissez `Microcontroller Architecture` sur `Linux process`, puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration :
+
+![Capture d’écran 2022-12-25 à 00 40 14](https://user-images.githubusercontent.com/12702322/209453373-8491cbee-75ad-47f3-a144-793fc4a85d13.jpg)
 
 - Pour compiler et installer le microcontrôleur, saisissez les commandes suivantes (une à la fois) :
 ```python
 sudo service klipper stop
+make clean
 make flash
 sudo service klipper start
-```
-- Il faut ensuite installer les dépendances nécessaires en saisissant ces commandes (une à la fois) :
-```python
-sudo apt update
-sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
-```
-- Suivi de cette commande pour installer Numpy dans l'environnement de Klipper :
-```python
-~/klippy-env/bin/pip install -v numpy
 ```
 - Il suffit ensuite de dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
 ```
