@@ -324,10 +324,14 @@ sudo wget https://datasheets.raspberrypi.com/cmio/dt-blob-disp1-cam1.bin -O /boo
 ```python
 sudo nano /boot/cmdline.txt
 ```
-- Sur la fenêtre qui s'affiche, ajoutez ces éléments à la fin de la ligne :
+- Sur la fenêtre qui s'affiche, remplacez le paramètre `console=tty=1` par `console=tty=3`
+
+- Puis ajoutez ces éléments à la fin de la ligne :
 ```python
 logo.nologo loglevel=0 vt.global_cursor_default=0 splash silent quiet
 ```
+![Capture d’écran 2022-12-24 à 17 15 56](https://user-images.githubusercontent.com/12702322/209443857-f6760a96-c6aa-46ce-8f60-f439775c2dd2.jpg)
+
 - Puis sur votre clavier appuyez sur les touches `Ctrl+X` pour quitter, `Y` pour sauvegarder et `Entrée` pour valider.
 
 <br />
