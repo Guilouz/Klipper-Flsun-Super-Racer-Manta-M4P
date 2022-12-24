@@ -254,7 +254,7 @@ La Manta M4P ne dispose pas de port PCI Express, il est donc nécessaire de dés
 sudo nano /boot/overlays/disable-pcie-overlay.dts
 ```
 - Copiez ce code dans la fenêtre qui s'affiche :
-```python
+```
 /*
  * disable-pcie-overlay.dts
  */
