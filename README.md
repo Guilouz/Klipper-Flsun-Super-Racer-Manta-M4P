@@ -13,7 +13,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Informations](#informations)
 - [Liens utiles](#liens-utiles)
 - [Fichiers STL nécessaires](#fichiers-stl-nécessaires)
-- [Schéma de câblage](#schéma-de-câblage)
+- [Schémas de câblage](#schémas-de-câblage)
 - [Installation de Klipper via MainsailOS](#installation-de-klipper-via-mainsailos)
 - [Connexion via SSH](#connexion-via-ssh)
 - [Mise à jour des dépendances](#mise-à-jour-des-dépendances)
@@ -85,9 +85,17 @@ Cette configuration de Klipper pour la Super Racer doit être utilisée avec cet
 
 <br />
 
-## Schéma de câblage
+## Schémas de câblage
+
+- Avec branchement ADXL sur GPIO :
 
 ![Manta M4P SR](https://user-images.githubusercontent.com/12702322/187642336-86ce7061-2d1e-45b7-9825-e911b071344c.png)
+
+- Avec branchement ADXL sur SPI :
+
+![Manta M4P SR SPI](https://user-images.githubusercontent.com/12702322/209481248-77f039a0-3b70-4f84-8a0f-e2a2b1da71f2.png)
+
+- Pins :
 
 ![Pins](https://user-images.githubusercontent.com/12702322/187642527-ae006f09-ed8e-44cc-a29e-cc6f2cf0a496.jpg)
 
