@@ -896,5 +896,5 @@ params: {"script":"SPEED_PROGRESS"}
 
 ## Remerciements
 
-- [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
-- [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
+- [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) pour les templates NeoPixels.
+- [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) pour les bases de certaines macros.
