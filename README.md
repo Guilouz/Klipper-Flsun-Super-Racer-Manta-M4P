@@ -390,10 +390,12 @@ make menuconfig
 ```
 [*] Enable extra low-level configuration options
     Micro-controller Architecture (STMicroelectronics STM32) --->
-    Processor model (STM32G0B1)
+    Processor model (STM32G0B1)  --->
     Bootloader offset (8KiB bootloader) --->
     Clock Reference (8 MHz crystal) --->
     Communication interface (USB (on PA11/PA12)) --->
+    USB ids  --->
+()  GPIO pins to set at micro-controller startup
 ```
 - Puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration.
 
