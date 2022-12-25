@@ -677,6 +677,8 @@ managed_services: klipper moonraker
 
 - Support (STL) : [Ici](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
 
+- Colliers de serrage 2.5 mm
+
 
 **Configuration :**
 
