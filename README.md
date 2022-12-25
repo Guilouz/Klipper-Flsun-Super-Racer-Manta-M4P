@@ -675,9 +675,9 @@ managed_services: klipper moonraker
 
 - LED Strip 1 m 60 IP 30 : [Ici](https://fr.aliexpress.com/item/32699391341.html?spm=a2g0o.store_pc_groupList.8148356.1.58d547644pkzbu&pdp_npi=2%40dis%21EUR%21%E2%82%AC%208%2C79%21%E2%82%AC%205%2C71%21%21%21%21%21%402100bdde16626287458333294e75cc%2112000026565180770%21sh)
 
-- Support (STL) : [Ici](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
-
 - Colliers de serrage 2.5 mm
+
+- Support (STL) : [Ici](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
 
 
 **Configuration :**
