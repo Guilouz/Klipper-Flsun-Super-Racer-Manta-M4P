@@ -26,7 +26,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Installation du firmware Klipper sur la Manta M4P](#installation-du-firmware-klipper-sur-la-manta-m4p)
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
-- [Changements côté Slicers](#changements-côté-slicers)
+- [Changements coté Slicers](#changements-coté-slicers)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
@@ -511,7 +511,7 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
 <br />
 
-## Changements côté Slicers
+## Changements coté Slicers
 
 - Changez le Gcode de démarrage et le Gcode de fin dans les paramètres de votre Slicer tels quels :
 
