@@ -331,7 +331,7 @@ sudo wget https://datasheets.raspberrypi.com/cmio/dt-blob-disp1-cam1.bin -O /boo
 ```python
 sudo nano /boot/cmdline.txt
 ```
-- Sur la fenêtre qui s'affiche, remplacez le paramètre `console=tty=1` par `console=tty=3`
+- Sur la fenêtre qui s'affiche, remplacez le paramètre `consoletty=1` par `consoletty=3`
 
 - Puis ajoutez ces éléments à la fin de la ligne :
 ```python
