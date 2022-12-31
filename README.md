@@ -669,7 +669,7 @@ managed_services: klipper moonraker
 - Allumer les Neopixels en orange avec la macro `NEOPIXEL_ORANGE`
 - Allumer les Neopixels en violet avec la macro `NEOPIXEL_VIOLET`
 - Allumer les Neopixels en fonction de la température de la buse (toutes les LEDs) avec la macro `HOTEND_GLOW`
-- Allumer les Neopixels en fonction de la température de la buse (LED par LED) avec la macro `HOTEND_GLOW`
+- Allumer les Neopixels en fonction de la température de la buse (LED par LED) avec la macro `HOTEND_PROGRESS`
 - Allumer les Neopixels en fonction de la température du plateau (toutes les LEDs) avec la macro `BED_GLOW`
 - Allumer les Neopixels en fonction de la température du plateau (LED par LED) avec la macro `BED_PROGRESS`
 - Allumer les Neopixels en fonction de la progression d'impression (toutes les LEDs) avec la macro `PERCENT_GLOW`
