@@ -430,6 +430,8 @@ ls /dev/serial/by-id/*
   ```
   - Il y aura un message d'erreur `dfu-util: Error during download get_status` après la mise à jour. N'y prêtez pas attention, le plus important c'est d'obtenir la ligne `File downloaded successfully`.
 
+![Capture d’écran 2023-01-03 à 18 26 01](https://user-images.githubusercontent.com/12702322/210409758-87adfbc1-e817-4350-96a1-14418f6c6535.jpg)
+
 <br />
 
 ## Configuration pour l'ADXL345
