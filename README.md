@@ -137,28 +137,17 @@ Cette configuration de Klipper pour la Super Racer doit être utilisée avec cet
 
 ![007](https://user-images.githubusercontent.com/12702322/209439780-be655081-de4d-4516-bb54-612022e7b1f0.jpg)
 
-- Facultatif : Configurez votre nom d'hôte préféré. Si vous le modifiez, l'URL sera modifiée en conséquence.
-Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://flsun-super-racer.local`.
+- Configurez les divers paramètres comme suit :
 
-- Activez l'option `Enable SSH` comme suit :
+![Sans titre](https://user-images.githubusercontent.com/12702322/210407996-71867cc7-5a5b-469f-b6bb-9dcee71441be.png)
 
-![008](https://user-images.githubusercontent.com/12702322/209439565-76d73483-7a50-43e5-a8a4-3bd26445b952.jpg)
+Note : Si vous modifiez le paramètre `Set hotname`, l'URL de votre Raspberry Pi sera modifiée en conséquence.                                              Comme indiqué dans la capture d'écran ci-dessus, votre URL sera : http://flsun-super-racer.local
 
-- Changez votre mot de passe, cette étape est fortement recommandée ! Veuillez ne pas changer le nom d'utilisateur !
-À ce stade, la configuration de MainsailOS repose sur l'utilisateur `pi` :
+Veuillez également à ne pas changer le nom d’utilisateur `pi` !  La configuration de MainsailOS repose sur cet utilisateur.                                                                                                                             
+- Cliquez ensuite sur `SAVE` pour sauvegarder ces paramètres.
 
-![009](https://user-images.githubusercontent.com/12702322/209439628-2eb7403d-a6d9-4e2a-92c2-f9a457769181.jpg)
-
-- Entrez les informations de votre réseau votre Wi-Fi :
-
-![010](https://user-images.githubusercontent.com/12702322/209439704-7a95dad4-7328-4df7-893f-3f8c0e3b13a8.jpg)
-
-- La dernière étape gère votre fuseau horaire et la disposition du clavier (cette dernière peut affecter votre langue dans certains cas) :
-
-![011](https://user-images.githubusercontent.com/12702322/209439720-4fb4b257-10cd-48f8-8a04-654a1aa406e5.jpg)
-
-- Avec toutes les options souhaitées préconfigurées, cliquez sur `ÉCRIRE` :
-
+- Vous pouvez ensuite cliquer sur `ÉCRIRE` :
+     
 ![012](https://user-images.githubusercontent.com/12702322/209439815-56274a2a-e7ed-4454-9fb0-c67b75d3a724.jpg)
 
 - Puis acceptez l'avertissement :
@@ -169,11 +158,11 @@ Comme indiqué dans la capture d'écran ci-dessous, votre URL sera `http://flsun
 
 ![014](https://user-images.githubusercontent.com/12702322/209439856-64d53e40-028c-4e3a-a348-885ba5a25890.jpg)
 
--  Une fois le transfert terminé, une vérification sera effectuée :
+-  Une fois l'écriture terminée, une vérification sera effectuée :
 
 ![015](https://user-images.githubusercontent.com/12702322/209439890-190698fc-4908-481d-8c1b-3fd1f6632a54.jpg)
 
-- Une fois terminé, cliquez sur `CONTINUER` :
+- Une fois la vérification terminée, cliquez sur `CONTINUER` :
 
 ![016](https://user-images.githubusercontent.com/12702322/209439914-a571c3ea-7ccb-4bb7-bb28-66c980f196cb.jpg)
 
