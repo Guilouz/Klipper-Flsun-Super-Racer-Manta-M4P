@@ -561,20 +561,26 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
 ## Calibrez votre imprimante
 
-Ces calibrations peuvent être effectuées par l'interface Web de Mainsail avec des macros ou directement sur l'écran.
+- Démarrez un **PID du plateau** depuis la macro `CALIBRATION_PID_BED_65` et enregistrez la configuration.
+  - Note : Il est possible de choisir la température de calibration en cliquant sur la flèche de la macro.
+  
+- Démarrez un **PID de la buse** depuis la macro `CALIBRATION_PID_HOTEND_220` et enregistrez la configuration.
+  - Note : Il est possible de choisir la température de calibration en cliquant sur la flèche de la macro.
 
-- Démarrez un PID BED et enregistrez la configuration.
+<br />
 
-- Démarrez un PID HOTEND et enregistrez la configuration.
+A noter que les calibrations suivante doivent être exécutées dans cet ordre et peuvent être effectuées via les macros ou directement depuis l'écran :
 
-- Démarrez une CALIBRATION ENDSTOP et enregistrez la configuration.
+- Mesure du **Z-Offset** via la macro `Z_OFFSET_CALIBRATION` ou depuis l'écran.
+  - Note : Le capteur de nivellement doit être branché pour cette opération. Une fois que le capteur a palpé le plateau, la hotend remonte de quelques centimètres, il faut alors retirer le palpeur et ajuster le Z.
 
-- Démarrez une CALIBRATION DELTA et enregistrez la configuration.
+- Calibration des **Capteurs de fin de course** via la macro `ENDSTOPS_CALIBRATION` ou depuis l'écran.
 
-- Démarrez un BED LEVELING et enregistrez la configuration.
+- Calibration **Delta** via la macro `DELTA_CALIBRATION` ou depuis l'écran.
+  - Note : Le capteur de nivellement doit être branché pour cette opération.
 
-- Ajustez le Z-OFFSET, vous devez d'abord aller à Z=0, puis ajuster la position de la buse avec une feuille de papier.
-  -Remarque : Le Z-Offset est enregistré en temps réel, y compris lors du réglage des babysteps.
+- **Nivellement** du plateau via la macro `BED_LEVELING` ou depuis l'écran.
+  - Note : Le capteur de nivellement doit être branché pour cette opération.
 
 <br />
 
