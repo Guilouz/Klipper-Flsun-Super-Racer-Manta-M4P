@@ -714,7 +714,7 @@ managed_services: klipper moonraker
 
 **Modes disponibles :**
 
-Les NeoPixels peuvent également être pilotées via ces macros ou depuis l’écran via le menu NeoPixels :
+Les NeoPixels peuvent être pilotées via ces macros ou depuis l’écran via le menu NeoPixels :
 
 - **NEOPIXEL_ON** : Allumer les NeoPixels
 - **NEOPIXEL_OFF** : Éteindre les NeoPixels
