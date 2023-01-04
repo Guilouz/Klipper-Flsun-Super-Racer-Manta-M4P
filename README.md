@@ -217,6 +217,12 @@ sudo apt clean
 sudo rpi-update
 ```
 
+- Puis saisissez la commande suivante (une à la fois) :
+```
+sudo rm -rf /home/pi/mainsail-config
+sudo rm /home/pi/printer_data/config/mainsail.cfg
+```
+
 - Puis saisissez la commande suivante pour redémarrer :
 ```python
 sudo reboot
@@ -497,6 +503,17 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 - Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
 
 - Après redémarrage du firmware, vous devriez voir le MCU de la Manta M4P se connecter à Klipper.
+
+- Ouvrez ensuite le fichier `moonraker.conf` et supprimez les lignes suivantes :
+```
+[update_manager mainsail-config] type: git_repo
+primary_branch: master
+path: ~/mainsail-config
+origin: https://github.com/mainsail-crew/mainsail-config.git managed_services: klipper
+```
+- Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+- Redémarrez ensuite l'imprimante.
 
 <br />
 
