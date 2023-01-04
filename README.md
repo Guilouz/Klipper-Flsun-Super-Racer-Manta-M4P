@@ -582,6 +582,39 @@ A noter que les calibrations suivante doivent être exécutées dans cet ordre e
 - **Nivellement** du plateau via la macro `BED_LEVELING` ou depuis l'écran.
   - Note : Le capteur de nivellement doit être branché pour cette opération.
 
+<br /><br />
+
+### Calibration de l'extrudeur :
+
+
+**Assurez-vous que l'extrudeur contient du filament, que la hotend est chauffée à une température appropriée et que l'imprimante est prête à extruder.**
+
+- Utilisez un marqueur pour placer une marque sur le filament à 120 mm de l'entrée de l'extrudeur.
+
+- Utilisez ensuite un pied à coulisse numérique pour mesurer la distance réelle de cette marque aussi précisément que possible. Notez 120 mm comme `< distance_de_la_marque >`.
+
+- Extrudez 100 mm de filament avec la séquence de commande suivante (une à la fois) :
+```
+G91
+G1 E100 F100
+```
+
+Notez 100 mm comme `< distance_demandée >`. 
+
+- Attendez que l'extrudeur termine le mouvement (cela prendra plusieurs secondes). Il est important d'utiliser la vitesse d'extrusion lente pour ce test, car une vitesse plus rapide peut provoquer une pression élevée dans l'extrudeur, ce qui fausserait les résultats. (N'utilisez pas les boutons d'extrusion depuis Mainsail ou l’écran pour ce test car ils s'extrudent à un rythme rapide).
+
+- Utilisez ensuite un pied à coulisse numérique pour mesurer la nouvelle distance entre l’entrée de l'extrudeur et la marque sur le filament. Notez ceci comme `< distance_mesurée >`.
+
+- Calculez ensuite : `< distance_de_la_marque >` **-** `< distance_mesurée >` **=** `< distance_extrusion >`
+
+- Calculez la rotation_distance comme suit :
+
+`< rotation_distance_actuelle >` **X** `< distance_extrusion >` **/** `< distance_demandée >` **=** `rotation_distance`
+
+Note : Vous pouvez récupérer la valeur `< rotation_distance_actuelle >` dans le fichier **printer.cfg** à la ligne `rotation_distance:` de la section `Paramètres Extrudeur & Driver`.
+
+- Remplacez ensuite la nouvelle valeur dans le fichier **printer.cfg** en arrondissant la nouvelle `rotation_distance` à trois décimales.
+
 <br />
 
 ## Mettre à jour Mainsail
