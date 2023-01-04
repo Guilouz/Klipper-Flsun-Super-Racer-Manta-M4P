@@ -28,7 +28,6 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Utilisation de la Configuration](#utilisation-de-la-configuration)
 - [Changements coté Slicers](#changements-coté-slicers)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
-- [Mettre à jour Mainsail](#mettre-à-jour-mainsail)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
 - [Installer et mettre à jour Timelapse](#installer-et-mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
@@ -614,26 +613,6 @@ Notez 100 mm comme `< distance_demandée >`.
 Note : Vous pouvez récupérer la valeur `< rotation_distance_actuelle >` dans le fichier **printer.cfg** à la ligne `rotation_distance:` de la section `Paramètres Extrudeur & Driver`.
 
 - Remplacez ensuite la nouvelle valeur dans le fichier **printer.cfg** en arrondissant la nouvelle `rotation_distance` à trois décimales.
-
-<br />
-
-## Mettre à jour Mainsail
-
-- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
-
-- Ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
-```
-[update_manager mainsail]
-type: web
-channel: stable
-repo: mainsail-crew/mainsail
-path: ~/mainsail
-```
-- Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
-
-- Vous pouvez maintenant cliquer sur le bouton d'actualisation (toujours dans l'onglet Machine) sur la tuile `Gestionnaire de mise à jour`.
-
-- Vous verrez apparaître une nouvelle ligne `mainsail`.
 
 <br />
 
