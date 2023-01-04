@@ -714,22 +714,24 @@ managed_services: klipper moonraker
 
 **Modes disponibles :**
 
-- Allumer les Neopixels avec la macro `NEOPIXEL_ON`
-- Eteindre les Neopixels avec la macro `NEOPIXEL_OFF`
-- Allumer les Neopixels en bleu avec la macro `NEOPIXEL_BLUE`
-- Allumer les Neopixels en rouge avec la macro `NEOPIXEL_RED`
-- Allumer les Neopixels en vert avec la macro `NEOPIXEL_GREEN`
-- Allumer les Neopixels en jaune avec la macro `NEOPIXEL_YELLOW`
-- Allumer les Neopixels en orange avec la macro `NEOPIXEL_ORANGE`
-- Allumer les Neopixels en violet avec la macro `NEOPIXEL_VIOLET`
-- Allumer les Neopixels en fonction de la température de la buse (toutes les LEDs) avec la macro `HOTEND_GLOW`
-- Allumer les Neopixels en fonction de la température de la buse (LED par LED) avec la macro `HOTEND_PROGRESS`
-- Allumer les Neopixels en fonction de la température du plateau (toutes les LEDs) avec la macro `BED_GLOW`
-- Allumer les Neopixels en fonction de la température du plateau (LED par LED) avec la macro `BED_PROGRESS`
-- Allumer les Neopixels en fonction de la progression d'impression (toutes les LEDs) avec la macro `PERCENT_GLOW`
-- Allumer les Neopixels en fonction de la progression d'impression (LED par LED) avec la macro `PERCENT_PROGRESS`
-- Allumer les Neopixels en fonction de la vitesse d'impression (toutes les LEDs) avec la macro `SPEED_GLOW`
-- Allumer les Neopixels en fonction de la vitesse d'impression (LED par LED) avec la macro `SPEED_PROGRESS`
+Les NeoPixels peuvent également être pilotées via ces macros ou depuis l’écran via le menu NeoPixels :
+
+- **NEOPIXEL_ON** : Allumer les NeoPixels
+- **NEOPIXEL_OFF** : Éteindre les NeoPixels
+- **NEOPIXEL_BLUE** : Allumer les NeoPixels en bleu
+- **NEOPIXEL_RED** : Allumer les NeoPixels en rouge
+- **NEOPIXEL_GREEN** : Allumer les NeoPixels en vert
+- **NEOPIXEL_YELLOW** : Allumer les NeoPixels en jaune
+- **NEOPIXEL_ORANGE** : Allumer les NeoPixels en orange
+- **NEOPIXEL_VIOLET** : Allumer les NeoPixels en violet
+- **HOTEND_GLOW** : Allumer toutes les NeoPixels en fonction de la température de la buse
+- **HOTEND_PROGRESS** : Allumer les NeoPixels une à une en fonction de la température de la buse
+- **BED_GLOW** : Allumer toutes les NeoPixels en fonction de la température du plateau
+- **BED_PROGRESS** : Allumer les NeoPixels une à une en fonction de la température du plateau
+- **PERCENT_GLOW** : Allumer toutes les NeoPixels en fonction de la progression d'impression
+- **PERCENT_PROGRESS** : Allumer les NeoPixels une à une en fonction de la progression d'impression
+- **SPEED_GLOW** : Allumer toutes les NeoPixels en fonction de la vitesse d'impression
+- **SPEED_PROGRESS** : Allumer les NeoPixels une à une en fonction de la vitesse d'impression
 
 **Nécéssaire :**
 
