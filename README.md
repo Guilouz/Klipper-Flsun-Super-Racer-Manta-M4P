@@ -29,7 +29,8 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Changements coté Slicers](#changements-coté-slicers)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
-- [Installer et mettre à jour Timelapse](#installer-et-mettre-à-jour-timelapse)
+- [Activer la fonction Exclude Objects](#activer-la-fonction-exclude-objects)
+- [Activer et mettre à jour Timelapse](#activer-et-mettre-à-jour-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 - [Remerciements](#remerciements)
 
@@ -68,8 +69,6 @@ Cette configuration de Klipper pour la Super Racer doit être utilisée avec cet
 - Pour ajuster manuellement la compensation de résonance, voir ici : https://www.klipper3d.org/Resonance_Compensation.html
 
 - Pour mesurer les Resonances avec l'ADXL, voir ici : https://www.klipper3d.org/Measuring_Resonances.html
-
-- Pour utiliser la fonction Exclude Objects, voir ici : https://docs.mainsail.xyz/features/exclude_objects
 
 - Pour afficher les vignettes à l'écran, voir ici : https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
 
@@ -638,18 +637,47 @@ install_script: scripts/KlipperScreen-install.sh
 
 <br />
 
-## Installer et mettre à jour Timelapse
+## Activer la fonction Exclude Objects
 
-- Connectez-vous de nouveau en SSH puis saisissez les commandes suivantes (une à la fois) :
-```python
-cd ~/
-git clone https://github.com/mainsail-crew/moonraker-timelapse.git
-bash /home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
+La fonction Exclude Objects permet d’exclure des objets individuels d'une impression en cours via ce bouton :
+
+![Sans titre](https://user-images.githubusercontent.com/12702322/210622141-4f5ce933-41a1-45ea-ae1b-39f3c31ac218.png)
+
+Le bouton ouvre une boîte de dialogue dans laquelle vous pouvez sélectionner chaque objet individuel et l'exclure de l'impression en cours :
+
+![Sans titre11](https://user-images.githubusercontent.com/12702322/210622156-68e11508-1ee1-46e7-8316-4d0b537c2271.png)
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Ouvrez le fichier `moonraker.conf` et remplacez la ligne suivante :
 ```
-- Rendez-vous ensuite  sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+enable_object_processing: False
 
-- Ouvrez le fichier `moonraker.conf` et ajoutez les lignes suivantes :
+```
+par
+```
+enable_object_processing: True
+```
+- Une fois terminé, cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
+
+<br />
+
+Plus d'informations sur la fonction Exclude Objects ici : https://docs.mainsail.xyz/features/exclude_objects
+
+<br />
+
+## Activer et mettre à jour Timelapse
+
+- Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
+
+- Ouvrez le fichier `moonraker.conf` et décommentez (retirez le # devant chaque ligne) les lignes suivantes comme ceci :
 ```python
+[timelapse]
+###   Directory where the generated video will be saved
+output_path: ~/timelapse/
+###   Directory where ffmpeg is installed
+ffmpeg_binary_path: /usr/bin/ffmpeg
+
 [update_manager timelapse]
 type: git_repo
 primary_branch: main
