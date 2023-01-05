@@ -467,7 +467,11 @@ sudo service klipper start
 ```
 - Il suffit ensuite de dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
 ```
-[include adxl345.cfg]
+[adxl345_gpio.cfg]
+```
+ou
+```
+[adxl345_spi.cfg]
 ```
 - Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
 
@@ -487,7 +491,18 @@ MEASURE_AXES_NOISE
 ```
 - Vous devriez obtenir des chiffres de référence pour le bruit de l'accéléromètre sur les axes (ils devraient être compris dans la plage de ~ 1-100). Un bruit d'axes trop élevé (par exemple 1000 et plus) peut indiquer des problèmes de capteur, des problèmes d'alimentation ou des ventilateurs déséquilibrés trop bruyants.
 
-- Pour mesurer les résonances, voir ici : https://www.klipper3d.org/Measuring_Resonances.html
+- Utilisez cette macro pour mesurer les résonances de l’axe X : `ADXL_AXE_X`
+
+- Suivi de la macro suivante pour enregistrer : `SAUVEGARDER`
+
+- Utilisez cette macro pour mesurer les résonances de l’axe Y : `ADXL_AXE_Y`
+
+- Suivi de la macro suivante pour enregistrer : `SAUVEGARDER`
+
+**Note :** Après les tests, il est préférable de désactiver l'ADXL en commentant à nouveau la ligne suivante `[adxl345_gpio.cfg]` ou `[adxl345_spi.cfg]` dans le fichier `printer.cfg`.
+
+Plus d’informations ici : https://www.klipper3d.org/Measuring_Resonances.html
+
 
 <br />
 
