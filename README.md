@@ -25,7 +25,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Modification du fichier /boot/config.txt](#modification-du-fichier-bootconfigtxt)
 - [Installation du firmware Klipper sur la Manta M4P](#installation-du-firmware-klipper-sur-la-manta-m4p)
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
-- [Utilisation de la Configuration](#utilisation-de-la-configuration)
+- [Utilisation des fichiers de configuration](#utilisation-des-fichiers-de-configuration)
 - [Changements coté Slicers](#changements-coté-slicers)
 - [Calibrez votre imprimante](#calibrez-votre-imprimante)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
@@ -506,7 +506,7 @@ Plus d’informations ici : https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
 
-## Utilisation de la Configuration
+## Utilisation des fichiers de configuration
 
 - Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer/archive/refs/heads/main.zip
 
