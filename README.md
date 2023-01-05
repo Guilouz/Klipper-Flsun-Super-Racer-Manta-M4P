@@ -512,7 +512,7 @@ Plus d’informations ici : https://www.klipper3d.org/Measuring_Resonances.html
 
 - Rendez-vous sur l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi.
 
-- Rendez-vous dans l'onglet `Machine` puis importez les fichiers `KlipperScreen.conf`, `printer.cfg`, `neopixels.cfg`, `macros.cfg` et `adxl345.cfg` situés dans le répertoire `Configurations`.
+- Rendez-vous dans l'onglet `Machine` puis importez les fichiers `KlipperScreen.conf`, `printer.cfg`, `neopixels.cfg`, `macros.cfg`, `adxl345_gpio.cfg` et `adxl345_spi.cfg` situés dans le répertoire `Configurations`.
 
 - Une fois importés, ouvrez le fichier `printer.cfg` et modifiez la ligne suivante dans la section `Paramètres MCU` :
 ```python
