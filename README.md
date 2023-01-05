@@ -30,7 +30,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Calibrer l'imprimante](#calibrer-limprimante)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
 - [Activer la fonction Exclude Objects](#activer-la-fonction-exclude-objects)
-- [Activer et mettre à jour Timelapse](#activer-et-mettre-à-jour-timelapse)
+- [Activer et mettre à jour la fonction Timelapse](#activer-et-mettre-à-jour-la-fonction-timelapse)
 - [Utilisation du Neopixels Ring Light](#utilisation-du-neopixels-ring-light)
 - [Remerciements](#remerciements)
 
@@ -701,7 +701,7 @@ Plus d'informations sur la fonction Exclude Objects ici : https://docs.mainsail.
 
 <br />
 
-## Activer et mettre à jour Timelapse
+## Activer et mettre à jour la fonction Timelapse
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
