@@ -27,7 +27,7 @@ Consultez le [document sur les fonctionnalités](https://www.klipper3d.org/Featu
 - [Configuration pour l'ADXL345](#configuration-pour-ladxl345)
 - [Utilisation des fichiers de configuration](#utilisation-des-fichiers-de-configuration)
 - [Changements coté Slicers](#changements-coté-slicers)
-- [Calibrez votre imprimante](#calibrez-votre-imprimante)
+- [Calibrer l'imprimante](#calibrer-limprimante)
 - [Mettre à jour KlipperScreen](#mettre-à-jour-klipperscreen)
 - [Activer la fonction Exclude Objects](#activer-la-fonction-exclude-objects)
 - [Activer et mettre à jour Timelapse](#activer-et-mettre-à-jour-timelapse)
@@ -592,7 +592,7 @@ origin: https://github.com/mainsail-crew/mainsail-config.git managed_services: k
 
 <br />
 
-## Calibrez votre imprimante
+## Calibrer l'imprimante
 
 - Démarrez un **PID du plateau** depuis la macro `CALIBRATION_PID_BED_65` et enregistrez la configuration.
   - Note : Il est possible de choisir la température de calibration en cliquant sur la flèche de la macro.
