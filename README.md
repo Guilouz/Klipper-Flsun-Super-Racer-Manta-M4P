@@ -1,4 +1,4 @@
-# Configuration Klipper pour FLSUN Super Racer
+# Configuration Klipper pour FLSUN Super Racer avec BigTreeTech Manta M4P
 
 ![maxresdefault](https://user-images.githubusercontent.com/12702322/187098254-be0a0182-cc04-401a-9e95-97dda4bdb1b6.jpeg)
 
@@ -289,8 +289,11 @@ sudo rm /boot/overlays/disable-pcie-overlay.dts
 
 ## Installation de l'image de démarrage
 
-- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/10146997/Boot.Pack.zip)
+Cette section permet d'avoir un logo de démarrage à la place des textes de démarrage du Rapsberry Pi jusqu’à l’apparition du menu KlipperScreen :
 
+![Sans titre](https://user-images.githubusercontent.com/12702322/210775238-db5592eb-8d63-4bec-b8d4-18c98394315b.png)
+
+- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/10146997/Boot.Pack.zip)
 
 - Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
 
@@ -712,7 +715,7 @@ managed_services: klipper moonraker
 
 ## Utilisation du Neopixels Ring Light
 
-**Modes disponibles :**
+### Modes disponibles :
 
 Les NeoPixels peuvent être pilotées via ces macros ou depuis l’écran via le menu NeoPixels :
 
@@ -733,7 +736,7 @@ Les NeoPixels peuvent être pilotées via ces macros ou depuis l’écran via le
 - **SPEED_GLOW** : Allumer toutes les NeoPixels en fonction de la vitesse d'impression
 - **SPEED_PROGRESS** : Allumer les NeoPixels une à une en fonction de la vitesse d'impression
 
-**Nécéssaire :**
+### Nécéssaire :
 
 - Neon Flexible Tube 1m T1616-Side 10mm PCB : [Ici](https://fr.aliexpress.com/item/4000095850068.html?spm=a2g0o.store_pc_allProduct.8148356.60.19667739Amjjs4&pdp_npi=2%40dis%21EUR%21%E2%82%AC%2013%2C34%21%E2%82%AC%209%2C34%21%21%21%21%21%402100bddd16626284472777282ed43e%2112000015942927508%21sh)
 
@@ -744,7 +747,7 @@ Les NeoPixels peuvent être pilotées via ces macros ou depuis l’écran via le
 - Support (STL) : [Ici](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
 
 
-**Configuration :**
+### Configuration :
 
 - Rendez-vous sur l'interface Web de Mainsail puis cliquez sur l'onglet `Machine`.
 
@@ -752,6 +755,8 @@ Les NeoPixels peuvent être pilotées via ces macros ou depuis l’écran via le
 ```python
 [include neopixels.cfg]
 ```
+  - **Note :** Vous pouvez également modifier le nombre de LED de vos NeoPixels dans la section Paramètres Neopixels à la ligne : `chain_count: 34`
+
 - Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
 
 - Toujours sur l'onglet `Machine`, ouvrez maintenant le fichier `KlipperScreen.conf` et copiez tout ce code juste avant la ligne `#~# --- Do not edit below this line. This section is auto generated --- #~#` :
