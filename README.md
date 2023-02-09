@@ -616,6 +616,16 @@ A noter que les calibrations suivante doivent être exécutées dans cet ordre e
 
 - **Nivellement** du plateau via la macro `BED_LEVELING` ou depuis l'écran.
   - Note : Le capteur de nivellement doit être branché pour cette opération.
+  
+- Suite à une mesure du Z-Offset, après toutes vos calibrations effectuées, je recommande d'appliquer un Offset de sécurité de 2 mm via la macro `SECURITY_OFFSET`.
+  
+  Cela pourrait éviter que la buse vienne gratter ou s'enfoncer sur le plateau en cas d'un mauvais ajustement du Z-Offset.
+
+- Après avoir effectué toutes les calibrations de l'imprimante, démarrez ensuite une impression et ajustez la première couche à l'aide des babysteps via le bouton `Ajustements` de KlipperScreen ou via la section `Tête d'impression` de Mainsail.
+
+  **Important**: Ne pas sauvegarder la valeur du Z-Offset, une macro se charge de le faire automatiquement dans le fichier `variables.cfg` et de recharger cette valeur automatiquement au démarrage de Klipper.
+
+- Vous trouverez un STL de test de première couche ici :  [First_Layer_Test.stl](https://github.com/Guilouz/Klipper-Flsun-Super-Racer-Manta-M4P/raw/main/Downloads/First_Layer_Test.stl)
 
 <br /><br />
 
