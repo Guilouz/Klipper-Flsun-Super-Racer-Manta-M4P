@@ -293,7 +293,9 @@ Cette section permet d'avoir un logo de démarrage à la place des textes de dé
 
 ![Sans titre](https://user-images.githubusercontent.com/12702322/210775238-db5592eb-8d63-4bec-b8d4-18c98394315b.png)
 
-- Téléchargez ce pack puis dézipez-le : [Pack Boot](https://github.com/Guilouz/Klipper-Flsun-Super-Racer/files/10146997/Boot.Pack.zip)
+- Téléchargez ce pack si vous utilisez l'écran BigTreeTech PITFT puis dézipez-le : [Pack Boot (800x480)](https://github.com/Guilouz/Klipper-Flsun-Super-Racer-Manta-M4P/raw/main/Downloads/Pack_Boot_800x480.rar)
+
+- Téléchargez ce pack si vous utilisez un autre écran avec une résolution de 1024x600 puis dézipez-le : [Pack Boot (1024x600)](https://github.com/Guilouz/Klipper-Flsun-Super-Racer-Manta-M4P/raw/main/Downloads/Pack_Boot_1024x600.rar)
 
 - Faites glisser les 3 fichiers `initramfs.img`, `splash.txt` et `splash.png` dans la fenêtre de gauche en vous assurant d'être bien dans le répertoire `/home/pi/`.
 
