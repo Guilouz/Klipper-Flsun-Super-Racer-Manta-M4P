@@ -510,7 +510,7 @@ Plus d’informations ici : https://www.klipper3d.org/Measuring_Resonances.html
 
 ## Utilisation des fichiers de configuration
 
-- Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer/archive/refs/heads/main.zip
+- Téléchargez et décompressez le fichier zip de mon référentiel ici : https://github.com/Guilouz/Klipper-Flsun-Super-Racer-Manta-M4P/archive/refs/heads/main.zip
 
 - Rendez-vous sur l'interface Web de Mainsail via votre navigateur en saisissant l'adresse IP de votre Raspberry Pi.
 
