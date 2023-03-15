@@ -208,7 +208,11 @@ sudo apt full-upgrade
 - Supprimez ensuite les dépendances inutiles (une commande à la fois) :
 ```
 sudo apt autoremove
+```
+```
 sudo apt autoclean
+```
+```
 sudo apt clean
 ```
 
@@ -220,6 +224,8 @@ sudo rpi-update
 - Puis saisissez la commande suivante (une à la fois) :
 ```
 sudo rm -rf /home/pi/mainsail-config
+```
+```
 sudo rm /home/pi/printer_data/config/mainsail.cfg
 ```
 
@@ -234,10 +240,13 @@ sudo reboot
 
 - Dans la fenêtre d'invite de commande SSH, saisissez les commandes suivantes (une à la fois) :
 ```
-git clone https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
+cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
+```
+```
 sudo mv /home/pi/KlipperScreen-Flsun-Super-Racer /home/pi/KlipperScreen
-cd ~/KlipperScreen
-./scripts/KlipperScreen-install.sh
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
 ```
 - Puis saisissez la commande suivante pour redémarrer :
 ```python
@@ -302,13 +311,21 @@ Cette section permet d'avoir un logo de démarrage à la place des textes de dé
 - Dans la fenêtre d'invite de commande SSH, saisissez les commandes suivantes (une à la fois) :
 ```python
 sudo cp /home/pi/splash.png /boot/
+```
+```python
 sudo cp /home/pi/splash.txt /boot/
+```
+```python
 sudo cp /home/pi/initramfs.img /boot/
 ```
 - Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en saisissant les commandes suivantes (une à la fois) :
 ```python
 sudo rm /home/pi/splash.png
+```
+```python
 sudo rm /home/pi/splash.txt
+```
+```python
 sudo rm /home/pi/initramfs.img
 ```
 
@@ -448,12 +465,18 @@ ls /dev/serial/by-id/*
 - Connectez-vous de nouveau en SSH puis saisissez les commandes suivantes (une à la fois) :
 ```python
 cd ~/klipper/
+```
+```python
 sudo cp ./scripts/klipper-mcu.service /etc/systemd/system/
+```
+```python
 sudo systemctl enable klipper-mcu.service
 ```
 - Il faut ensuite compiler le code du microcontrôleur en saisissant ces commandes (une à la fois) :
 ```python
 cd ~/klipper/
+```
+```python
 make menuconfig
 ```
 - Sur le menu, définissez `Microcontroller Architecture` sur `Linux process`, puis sur votre clavier appuyez sur la touche `Q` puis sur `Y` pour sauvegarder la configuration :
@@ -463,8 +486,14 @@ make menuconfig
 - Pour compiler et installer le microcontrôleur, saisissez les commandes suivantes (une à la fois) :
 ```python
 sudo service klipper stop
+``
+```python
 make clean
+``
+```python
 make flash
+``
+```python
 sudo service klipper start
 ```
 - Il suffit ensuite de dé-commenter (retirer le #) de la ligne suivante dans le fichier `printer.cfg` pour activer le support de l'ADXL :
@@ -526,7 +555,8 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 
 - Ouvrez ensuite le fichier `moonraker.conf` et supprimez les lignes suivantes :
 ```
-[update_manager mainsail-config] type: git_repo
+[update_manager mainsail-config]
+type: git_repo
 primary_branch: master
 path: ~/mainsail-config
 origin: https://github.com/mainsail-crew/mainsail-config.git managed_services: klipper
