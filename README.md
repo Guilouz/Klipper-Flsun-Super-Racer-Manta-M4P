@@ -490,13 +490,13 @@ make menuconfig
 - Pour compiler et installer le microcontrôleur, saisissez les commandes suivantes (une à la fois) :
 ```python
 sudo service klipper stop
-``
+```
 ```python
 make clean
-``
+```
 ```python
 make flash
-``
+```
 ```python
 sudo service klipper start
 ```
