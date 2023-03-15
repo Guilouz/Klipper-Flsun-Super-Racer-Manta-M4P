@@ -427,6 +427,8 @@ make menuconfig
 - Saisissez les commandes suivantes pour compiler le firmware (une à la fois) :
 ```python
 make clean
+```
+```python
 make
 ```
 - Récupérez le firmware nommé `Klipper.bin` sur la page de gauche dans le répertoire `/home/pi/klipper/out/`.
