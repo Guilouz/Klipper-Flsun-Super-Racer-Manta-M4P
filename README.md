@@ -407,6 +407,8 @@ sudo reboot
 - Connectez-vous de nouveau en SSH et saisissez ces commandes (une à la fois) :
 ```shell
 cd ~/klipper/
+```
+```shell
 make menuconfig
 ```
 - Sélectionnez ces paramètres :
