@@ -563,7 +563,8 @@ serial: /dev/serial/by-id/XXXXX (en remplaçant les XXXXX par le serial obtenu p
 type: git_repo
 primary_branch: master
 path: ~/mainsail-config
-origin: https://github.com/mainsail-crew/mainsail-config.git managed_services: klipper
+origin: https://github.com/mainsail-crew/mainsail-config.git
+managed_services: klipper
 ```
 - Cliquez sur `SAUVEGARDER ET REDÉMARRAGE` en haut à droite pour enregistrer le fichier.
 
