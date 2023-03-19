@@ -202,7 +202,7 @@ sudo apt update
 
 - Puis cette commande pour les installer :
 ```
-sudo apt full-upgrade
+sudo apt full-upgrade -y
 ```
 
 - Supprimez ensuite les dépendances inutiles (une commande à la fois) :
