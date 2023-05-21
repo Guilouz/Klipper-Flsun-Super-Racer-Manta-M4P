@@ -243,7 +243,7 @@ sudo reboot
 cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
 ```
 ```
-sudo mv /home/pi/KlipperScreen-Flsun-Super-Racer /home/pi/KlipperScreen
+sudo mv ~/KlipperScreen-Flsun-Super-Racer ~/KlipperScreen
 ```
 ```
 ./KlipperScreen/scripts/KlipperScreen-install.sh
@@ -310,23 +310,23 @@ Cette section permet d'avoir un logo de démarrage à la place des textes de dé
 
 - Dans la fenêtre d'invite de commande SSH, saisissez les commandes suivantes (une à la fois) :
 ```python
-sudo cp /home/pi/splash.png /boot/
+sudo cp ~/splash.png /boot/
 ```
 ```python
-sudo cp /home/pi/splash.txt /boot/
+sudo cp ~/splash.txt /boot/
 ```
 ```python
-sudo cp /home/pi/initramfs.img /boot/
+sudo cp ~/initramfs.img /boot/
 ```
 - Vous pouvez ensuite supprimer ces 3 fichiers du répertoire `/home/pi/` en saisissant les commandes suivantes (une à la fois) :
 ```python
-sudo rm /home/pi/splash.png
+sudo rm ~/splash.png
 ```
 ```python
-sudo rm /home/pi/splash.txt
+sudo rm ~/splash.txt
 ```
 ```python
-sudo rm /home/pi/initramfs.img
+sudo rm ~/initramfs.img
 ```
 
 <br />
@@ -443,7 +443,7 @@ make
 
 - Connectez-vous de nouveau en SSH puis saisissez la commande suivante afin de récupérer le serial USB de la Manta M4P :
 ```shell
-ls /dev/serial/by-id/*
+cd ~ && ls /dev/serial/by-id/*
 ```
 - Copiez la ligne qui s'affiche (dans un fichier texte par exemple), elle nous sera utile après.
 
@@ -705,9 +705,9 @@ Note : Vous pouvez récupérer la valeur `< rotation_distance_actuelle >` dans l
 ```
 [update_manager KlipperScreen]
 type: git_repo
-path: /home/pi/KlipperScreen
+path: ~/KlipperScreen
 origin: https://github.com/Guilouz/KlipperScreen-Flsun-Super-Racer.git
-env: /home/pi/.KlipperScreen-env/bin/python
+env: ~/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
